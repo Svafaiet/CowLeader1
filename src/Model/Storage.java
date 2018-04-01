@@ -1,15 +1,48 @@
 package Model;
 
+import Model.ReturnValues.AddToStorageReturnValue;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class Storage {
     private int capacity;
-    private int barbeyAmount;
-    private int alfalfaAmount;
-    private int strawAmount;
+    public Map<Feed, Integer> feedsCount;
 
     public Storage() {
         capacity = 0;
-        barbeyAmount = 0;
-        alfalfaAmount = 0;
-        strawAmount = 0;
+        feedsCount = new HashMap<>();
+        feedsCount.put(Feeds.findFeedByName("barley"), 0);
+        feedsCount.put(Feeds.findFeedByName("alfalfa"), 0);
+        feedsCount.put(Feeds.findFeedByName("straw"), 0);
+    }
+
+    private int getStock() {
+        int stock = 0;
+        for (Feed feed : feedsCount.keySet()) {
+            stock += feedsCount.get(feed);
+        }
+        return stock;
+    }
+
+    public AddToStorageReturnValue addToStorage(String feedName, int amount) {
+        if (amount + getStock() > capacity) {
+            return AddToStorageReturnValue.NOT_ENOUGH_SPACE;
+        }
+        Feed feed = Feeds.findFeedByName(feedName);
+        if(feed == null) {
+            return AddToStorageReturnValue.NO_SUCH_A_FOOD;
+        }
+        feedsCount.replace(feed, feedsCount.get(feed) + amount);
+        return AddToStorageReturnValue.ADDED_SUCCESSFULLY;
+    }
+
+    public AddToStorageReturnValue addNewFeedToStorage(Feed feed, int amount) {
+        feedsCount.put(feed, 0);
+        return addToStorage(feed.getName(), amount);
+    }
+
+    public void increaseStorageCapacity(int n) {
+        capacity += n;
     }
 }

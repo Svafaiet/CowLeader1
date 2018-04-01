@@ -1,6 +1,6 @@
 package Model;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Barband {
     private Cow[] cows;
@@ -29,26 +29,31 @@ public class Barband {
         return -1;
     }
 
-    public void feedBarband(int barbeyAmount, int alfalfaAmount, int strawAmount) {
-        akhoor.addFeedToAkhoor(barbeyAmount, alfalfaAmount,strawAmount);
+    public void feedBarband(Feed feed, int count) {
+        akhoor.addFeedToAkhoor(feed, count);
         //TODO cows must start eating
+    }
+
+    public void removeCow(int cowNumberInBarband) {
+        cows[cowNumberInBarband  - 1] = null;
     }
 }
 
 class Akhoor {
-    private int barbeyAmount;
-    private int alfalfaAmount;
-    private int strawAmount;
+    private Map<Feed, Integer> feedsCount;
 
     public Akhoor() {
-        barbeyAmount = 0;
-        alfalfaAmount = 0;
-        strawAmount = 0;
+        feedsCount = new HashMap<>();
+        feedsCount.put(Feeds.findFeedByName("barley"), 0);
+        feedsCount.put(Feeds.findFeedByName("alfalfa"), 0);
+        feedsCount.put(Feeds.findFeedByName("straw"), 0);
     }
 
-    public void addFeedToAkhoor(int barbeyAmount, int alfalfaAmount, int strawAmount) {
-        this.barbeyAmount += barbeyAmount;
-        this.alfalfaAmount += alfalfaAmount;
-        this.strawAmount += strawAmount;
+    public void addFeedToAkhoor(Feed feed, int count) {
+        if(!feedsCount.containsKey(feed)) {
+            feedsCount.put(feed, count);
+        } else {
+            feedsCount.replace(feed, feedsCount.get(feed) + count);
+        }
     }
 }

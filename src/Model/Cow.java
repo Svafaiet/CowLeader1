@@ -10,7 +10,7 @@ public class Cow {
     private int milkedProduced;
 
     private boolean isCowMilkingAbilityLost() {
-        return age > lastDayBeingMilked + CowPhysiology.DAYS_FOR_lOSING_MILKING;
+        return age > lastDayBeingMilked + CowPhysiology.DAYS_FOR_LOSING_MILKING;
     }
 
     private int calculateMaxMilkCapacity () {
@@ -65,14 +65,15 @@ class CowPhysiology {
     public static final int COW_MILKING_POTENTIAL_INCREASE_AMOUNT = 5;
     public static final int HUNGER_BOUNDARY_FOR_DEATH_MULTIPLIER = 4;
     public static final int WIGHT_BOUNDARY_FOR_DEATH_AMOUNT = 100;
-    public static final int DAYS_FOR_lOSING_MILKING = 3;
+    public static final int DAYS_FOR_LOSING_MILKING = 3;
 }
 
-class CowLocation {
+class CowInformation {
+    public static final CowInformation DEAD_COW = new CowInformation(-1, -1);
     private int barbandNum;
     private int cowNumInBarband;
 
-    public CowLocation(int barbandNum, int cowNumInBarband) {
+    public CowInformation(int barbandNum, int cowNumInBarband) {
         this.barbandNum = barbandNum;
         this.cowNumInBarband = cowNumInBarband;
     }
@@ -91,5 +92,15 @@ class CowLocation {
         } else {
             return true;
         }
+    }
+
+    public void killCow() {
+        barbandNum = DEAD_COW.barbandNum;
+        cowNumInBarband = DEAD_COW.cowNumInBarband;
+    }
+
+    public void move(int barbandNum, int cowNumInBarband) {
+        this.barbandNum = barbandNum;
+        this.cowNumInBarband = cowNumInBarband;
     }
 }

@@ -13,16 +13,39 @@ public class Tank {
     }
 
     public boolean hasCapacity(int milkAmount) {
-        if(capacity < stock + milkAmount) {
+        if (capacity < stock + milkAmount) {
             return false;
         }
         return true;
     }
 
+    public boolean hasMilk(int milkAmout) {
+        return stock >= milkAmout;
+    }
+
     public void addMilk(int milkAmount, Date today) {
-        if(expirationDate == null) {
+        if (expirationDate == null) {
             expirationDate = today.addDaytoDate(MILK_DURANCE);
         }
         stock += milkAmount;
+    }
+
+    public void reduceMilk(int amount) {
+
+        stock -= amount;
+        return;
+
+    }
+
+    public boolean isMilkSpoiled(Date today) {
+        if (expirationDate == null) {
+            return false;
+        }
+        return today.daysBetween(expirationDate) >= MILK_DURANCE;
+    }
+
+    public void empty() {
+        expirationDate = null;
+        stock = 0;
     }
 }
