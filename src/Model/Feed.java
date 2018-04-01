@@ -1,6 +1,6 @@
 package Model;
 
-public class Feed {
+public class Feed implements Comparable<Feed> {
     private String name;
     private int loveDegree;
     private int weightIncrease;
@@ -22,6 +22,15 @@ public class Feed {
             return name.equals(((Feed) obj).name);
         }
         return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+
+    public int compareTo(Feed anotherFeed) {
+        return Integer.compare(anotherFeed.loveDegree, this.loveDegree);
     }
 
     public String getName() {

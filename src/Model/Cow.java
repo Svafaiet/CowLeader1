@@ -1,6 +1,7 @@
 package Model;
 
 public class Cow {
+    private int num;
     private int age;
     private int hunger;
     private int lastDayBeingMilked;
@@ -9,7 +10,8 @@ public class Cow {
     private int weight;
     private int totalMilkProduced;
 
-    public Cow() {
+    public Cow(int num) {
+        this.num = num;
         age = 0;
         hunger = 0;
         lastDayBeingMilked = 0;
@@ -46,20 +48,34 @@ public class Cow {
         return milk;
     }
 
-
-    public void feedCow() {
-        //TODO new cows dont eat anything
+    public int getNum() {
+        return num;
     }
 
-    public int milkCow() {
-        if(isCowMilkingAbilityLost()){
-            return 0;
+    public int getAge() {
+        return age;
+    }
+
+    public int getHunger() {
+        return hunger;
+    }
+
+    public void feedCow(Feed feed) {
+        if (age < CowPhysiology.INITIAL_DAY_FOR_MILKING) {
+            return;
         }
-        int milkAmount = milk;
+        savedMilk += feed.getMilkIncrease();
+        weight += feed.getWeightIncrease();
+
+    }
+
+    public void milkCow() {
+        if(isCowMilkingAbilityLost()){
+            return;
+        }
         milk = 0;
         lastDayBeingMilked = age;
         totalMilkProduced += milk;
-        return milkAmount;
     }
 
     public void update() {
@@ -137,5 +153,40 @@ class CowInformation {
     public void move(int barbandNum, int cowNumInBarband) {
         this.barbandNum = barbandNum;
         this.cowNumInBarband = cowNumInBarband;
+    }
+}
+
+class CowTurn implements Comparable<CowTurn> {
+    private int hunger;
+    private int num;
+    private int age;
+    private int index;
+
+    public CowTurn(int index, Cow[] cows) {
+        this.index = index;
+        hunger = cows[index].getHunger();
+        num = cows[index].getNum();
+        age = cows[index].getAge();
+    }
+
+    public int compareTo(CowTurn cowTurn) {
+        if (this.hunger < cowTurn.hunger) {
+            return 1;
+        }
+        if (this.hunger > cowTurn.hunger) {
+            return -1;
+        }
+        if (this.age > cowTurn.age) {
+            return 1;
+        }
+        if (this.age < cowTurn.age) {
+            return -1;
+        }
+        return Integer.compare(this.num, cowTurn.num);
+
+    }
+
+    public int getIndex() {
+        return index;
     }
 }

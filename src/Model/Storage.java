@@ -25,6 +25,18 @@ public class Storage {
         return stock;
     }
 
+    public boolean getFromStorage(Feed feed, int amount) {
+        if (!feedsCount.containsKey(feed)) {
+            return false;
+        } else {
+            if (amount > feedsCount.get(feed)) {
+                return false;
+            }
+            feedsCount.replace(feed, feedsCount.get(feed) - amount);
+            return true;
+        }
+    }
+
     public AddToStorageReturnValue addToStorage(String feedName, int amount) {
         if (amount + getStock() > capacity) {
             return AddToStorageReturnValue.NOT_ENOUGH_SPACE;

@@ -85,7 +85,7 @@ public class DairyFarm {
 
     //hasAccessToArrays
     public boolean addNewCow(int n) {
-        int cowNumInBarband = getBarband(n).addCow(new Cow());
+        int cowNumInBarband = getBarband(n).addCow(new Cow(getCowCounts() + 1));
         if (cowNumInBarband != -1) {
             cowInformation.add(new CowInformation(n, cowNumInBarband));
             return true;
@@ -118,13 +118,16 @@ public class DairyFarm {
 
     //from here methods cant have access to arrays;
 
-    public boolean feedBarband(int barbandNum, Map<Feed, Integer> feedsCount) {
+    public boolean feedBarband(int barbandNum, Map<String, Integer> feedsCount) {
         if (getBarbandsCount() < barbandNum) {
             return false;
         } else {
-            for (Feed feed : feedsCount.keySet()) {
-                if(Feeds.findFeedByName(feed.getName()) != null) {
-                    getBarband(barbandNum).feedBarband(feed, feedsCount.get(feed));
+            for (String feedName : feedsCount.keySet()) {
+                Feed feed = Feeds.findFeedByName(feedName);
+                if(feed != null) {
+                    if (storage.getFromStorage(feed, feedsCount.get(feedName))) {
+                        getBarband(barbandNum).feedBarband(feed, feedsCount.get(feedName));
+                    }
                 }
             }
             return true;
@@ -214,6 +217,7 @@ public class DairyFarm {
     public void showRanks() {
     }
 
+    //hasAccessToArrays
     public void endDay() {
         today.datePlusPlus();
         for (int i = 0; i < getCowCounts(); i++) {
@@ -223,6 +227,9 @@ public class DairyFarm {
                 if (cow.hasDied()) {
                     butcherCow(i);
                 }
+            }
+            for (Barband barband : barbands) {
+                barband.feedCows();
             }
         }
     }
