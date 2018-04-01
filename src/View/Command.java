@@ -1,0 +1,24 @@
+package View;
+
+public enum Command {
+    SET_DATE ,
+    ADD_BAEBAND ,
+    STATUS_BARBAND ,
+    STATUS_COW ,
+    ADD_COW ,
+    ADD_TANK ,
+    STATUS_FARM ,
+    FEED_BARBAND ,
+    STATUS_STORAGE ,
+    STATUS_TANKS ,
+    MILK_CO ,
+    ADD_FOOD_TO_STORAGE ,
+    SELL_MILK ,
+    EMPTY_TANK ,
+    BUTCHER_COW ,
+    MOVE_COW ,
+    SHOW_RANKS ,
+    INCREASE_STORAGE_CAPACITY ,
+    ADD_NEW_FOOD ,
+    END_DAY
+}

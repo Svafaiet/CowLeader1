@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f26ae8e3-68a1-403b-a6b9-9967318521fe" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/View/DairyFarmView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Barband.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Barband.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Cow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Cow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/DairyFarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DairyFarm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Feed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Feed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/DairyFarmView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DairyFarmView.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -123,15 +118,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddToStorageReturnValue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/ReturnValues/AddToStorageReturnValue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" column="56" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DairyFarm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/DairyFarm.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -157,27 +143,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DairyFarmView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DairyFarmView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/DairyFarmView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            <state relative-caret-position="210">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tank.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Tank.java">
+      <file leaf-file-name="Command.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/Command.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-              <folding>
-                <element signature="method#Tank#0;class#Tank#0" />
-                <element signature="method#hasCapacity#0;class#Tank#0" />
-                <element signature="method#addMilk#0;class#Tank#0" />
-                <element signature="method#isMilkSpoiled#0;class#Tank#0" />
-                <element signature="method#empty#0;class#Tank#0" />
-              </folding>
+            <state relative-caret-position="220">
+              <caret line="22" column="11" lean-forward="true" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InputRegexes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/InputRegexes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="22" column="82" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="22" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -187,8 +175,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -196,6 +184,7 @@
     <findStrings>
       <find>arbey</find>
       <find>feedB</find>
+      <find>public static final String</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -226,6 +215,8 @@
         <option value="$PROJECT_DIR$/src/Model/Cow.java" />
         <option value="$PROJECT_DIR$/src/Model/DairyFarm.java" />
         <option value="$PROJECT_DIR$/src/View/DairyFarmView.java" />
+        <option value="$PROJECT_DIR$/src/View/InputRegexes.java" />
+        <option value="$PROJECT_DIR$/src/View/Command.java" />
       </list>
     </option>
   </component>
@@ -374,12 +365,12 @@
       <updated>1521979847224</updated>
       <workItem from="1521979855098" duration="56000" />
       <workItem from="1521981779193" duration="772000" />
-      <workItem from="1522494078907" duration="43239000" />
+      <workItem from="1522494078907" duration="46229000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44067000" />
+    <option name="totallyTimeSpent" value="47057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -706,6 +697,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/DairyFarmView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/DairyFarm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -729,10 +727,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/DairyFarmView.java">
+    <entry file="file://$PROJECT_DIR$/src/View/InputRegexes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        <state relative-caret-position="361">
+          <caret line="22" column="82" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="22" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="22" column="11" lean-forward="true" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
         </state>
       </provider>
     </entry>
