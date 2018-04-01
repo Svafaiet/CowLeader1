@@ -19,8 +19,8 @@ public class Tank {
         return true;
     }
 
-    public boolean hasMilk(int milkAmout) {
-        return stock >= milkAmout;
+    public boolean hasMilk(int milkAmount) {
+        return stock >= milkAmount;
     }
 
     public void addMilk(int milkAmount, Date today) {
@@ -31,17 +31,14 @@ public class Tank {
     }
 
     public void reduceMilk(int amount) {
-
         stock -= amount;
-        return;
-
     }
 
     public boolean isMilkSpoiled(Date today) {
         if (expirationDate == null) {
             return false;
         }
-        return today.daysBetween(expirationDate) >= MILK_DURANCE;
+        return today.daysBetween(expirationDate) > MILK_DURANCE;
     }
 
     public void empty() {

@@ -7,50 +7,85 @@ public class Cow {
     private int milk;
     private int savedMilk;
     private int weight;
-    private int milkedProduced;
+    private int totalMilkProduced;
+
+    public Cow() {
+        age = 0;
+        hunger = 0;
+        lastDayBeingMilked = 0;
+        milk = 0;
+        savedMilk = 0;
+        weight = CowPhysiology.COW_WIGHT;
+        totalMilkProduced = 0;
+    }
 
     private boolean isCowMilkingAbilityLost() {
         return age > lastDayBeingMilked + CowPhysiology.DAYS_FOR_LOSING_MILKING;
     }
 
-    private int calculateMaxMilkCapacity () {
-        //todo maybe milk dot become zero after 3 days
-        if(age < CowPhysiology.INITIAL_DAY_FOR_MILKING) {
+    private int calculateMaxMilkCapacity() {
+        if (age < CowPhysiology.INITIAL_DAY_FOR_MILKING) {
             return 0;
         }
-        if(isCowMilkingAbilityLost()) {
+        if (isCowMilkingAbilityLost()) {
             return 0;
         } else {
             return CowPhysiology.INITIAL_COW_MILKING_POTENTIAL +
-                    (age / CowPhysiology.DAYS_FOR_COW_PHYSIOLOGICAL_CHANGES)
+                    (int) Math.floor(age / CowPhysiology.DAYS_FOR_COW_PHYSIOLOGICAL_CHANGES)
                             * CowPhysiology.COW_MILKING_POTENTIAL_INCREASE_AMOUNT;
         }
     }
 
+    private int calculateCowDailyFoodNeed() {
+        return CowPhysiology.INITIAL_COW_DAILY_FOOD_NEED +
+                (int) Math.floor(age / CowPhysiology.DAYS_FOR_COW_PHYSIOLOGICAL_CHANGES)
+                        * CowPhysiology.COW_DAILY_FOOD_NEED_INCREASE_AMOUNT;
+    }
+
     public int getMilk() {
-        if(isCowMilkingAbilityLost()) {
-            return 0;
-            //todo maybe milk dont become zero after 3 days
-        }
         return milk;
     }
 
-    public void addToMilk(int newMilk) {
-        //if(isCowMilkingAbilityLost()) { return; }
-        milk += newMilk;
-        milk = Math.max(milk, calculateMaxMilkCapacity());
+
+    public void feedCow() {
+        //TODO new cows dont eat anything
     }
 
     public int milkCow() {
-        //todo maybe milk dont become zero after 3 days
-        if(isCowMilkingAbilityLost()) {
+        if(isCowMilkingAbilityLost()){
             return 0;
-        } else {
-            int milkAmount = milk;
-            milk = 0;
-            lastDayBeingMilked = age;
-            return milkAmount;
         }
+        int milkAmount = milk;
+        milk = 0;
+        lastDayBeingMilked = age;
+        totalMilkProduced += milk;
+        return milkAmount;
+    }
+
+    public void update() {
+        age++;
+        milk += savedMilk;
+        savedMilk = 0;
+        milk = Math.min(milk, calculateMaxMilkCapacity());
+        //maybe order change
+        weight -= hunger;
+        hunger += calculateCowDailyFoodNeed();
+        if (isCowMilkingAbilityLost()) {
+            milk = 0;
+        }
+    }
+
+    public boolean hasDied() {
+        if (age > CowPhysiology.COW_LIFE_LENGTH) {
+            return true;
+        }
+        if (weight < CowPhysiology.WIGHT_BOUNDARY_FOR_DEATH_AMOUNT) {
+            return true;
+        }
+        if (hunger >= calculateCowDailyFoodNeed() * CowPhysiology.HUNGER_BOUNDARY_FOR_DEATH_MULTIPLIER) {
+            return true;
+        }
+        return false;
     }
 }
 
@@ -87,7 +122,7 @@ class CowInformation {
     }
 
     public boolean isAlive() {
-        if(barbandNum == -1 || cowNumInBarband == -1) {
+        if (barbandNum == -1 || cowNumInBarband == -1) {
             return false;
         } else {
             return true;

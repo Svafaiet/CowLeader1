@@ -30,6 +30,11 @@ public class DairyFarm {
     }
 
     //hasAccessToArray
+    public int getCowCounts() {
+        return cowInformation.size();
+    }
+
+    //hasAccessToArray
     public Barband getBarband(int n) {
         if (barbands.size() < n) {
             return null;
@@ -204,5 +209,21 @@ public class DairyFarm {
 
     public void increaseStorageCapacity(int n) {
         storage.increaseStorageCapacity(n);
+    }
+
+    public void showRanks() {
+    }
+
+    public void endDay() {
+        today.datePlusPlus();
+        for (int i = 0; i < getCowCounts(); i++) {
+            Cow cow = getCowByNumber(i);
+            if(isCowAlive(cow)) {
+                cow.update();
+                if (cow.hasDied()) {
+                    butcherCow(i);
+                }
+            }
+        }
     }
 }
