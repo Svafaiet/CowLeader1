@@ -25,7 +25,7 @@ public class Cow {
         return age > lastDayBeingMilked + CowPhysiology.DAYS_FOR_LOSING_MILKING;
     }
 
-    private int calculateMaxMilkCapacity() {
+    public int calculateMaxMilkCapacity() {
         if (age < CowPhysiology.INITIAL_DAY_FOR_MILKING) {
             return 0;
         }
@@ -102,6 +102,10 @@ public class Cow {
             return true;
         }
         return false;
+    }
+
+    public String getInformation() {
+        return "" + num + " " + age + " " + hunger + " " + weight + " " + milk + " " + totalMilkProduced;
     }
 }
 

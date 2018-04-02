@@ -44,7 +44,7 @@ public class Massage {
     public static final String
             COW_HAS_NO_MILK = "cow has no milk";
     public static final String INVALID_TANK = "invalid tank";
-    public static final String INVALID_FOOD_NAME = "";
+    public static final String INVALID_FOOD_NAME = "invalid food name";
     public static final String THERE_IS_NOT_ENOUGH_MILK = "there is not enough milk";
     public static final String MILK_SOLD_SUCCESSFULLY = "milk sold successfully";
     public static final String

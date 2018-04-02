@@ -1,0 +1,103 @@
+1111/11/00
+1111/11/11
+add barband 2
+add cow 1
+add cow 1
+increase storage capacity 1000
+add storage straw 100
+add storage barley 100
+status storage
+day passed
+status cow 1
+feed barband 1
+straw 12
+end_feed
+status barband 1
+status cow 1
+day passed
+status cow 1
+status barband 1
+day passed
+status cow 1
+day passed
+status cow 1
+feed barband 1
+straw 10
+end_feed
+day passed
+status cow 1
+feed barband 1
+straw 10
+end_feed
+day passed
+status cow 1
+feed barband 1
+straw 10
+end_feed
+day passed
+status cow 1
+feed barband 1
+straw 10
+end_feed
+day passed
+status cow 1
+feed barband 1
+straw 10
+end_feed
+day passed
+status cow 1
+feed barband 1
+straw 10
+end_feed
+day passed
+status cow 1
+feed barband 1
+straw 10
+end_feed
+day passed
+status cow 1
+feed barband 1
+straw 10
+end_feed
+day passed
+status cow 1
+feed barband 1
+straw 10
+end_feed
+day passed
+status cow 1
+status barband 1
+add cow 1
+add tank 20
+milk cow 1 1
+status cow 1
+add new food food1 100
+7
+3
+90
+feed barband 1
+food1 3
+end_feed
+status barband 1
+day passed
+status cow 1
+day passed
+add tank 30
+milk cow 1 1
+milk cow 1 2
+status tanks
+sell milk 1 2
+day passed
+day passsed
+day passed
+status tanks
+sell milk 1 2
+day passed
+sell milk 1 2
+day passed
+sell milk 1 2
+status tanks
+empty tank 2
+status tanks
+status farm
+end

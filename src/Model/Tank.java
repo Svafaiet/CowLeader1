@@ -45,4 +45,13 @@ public class Tank {
         expirationDate = null;
         stock = 0;
     }
+
+    public String getInformation() {
+        String ans = "" + capacity + " " + (capacity-stock);
+        if(expirationDate == null) {
+            return ans + "NO_EXPDA";
+        } else {
+            return ans + expirationDate.toString();
+        }
+    }
 }

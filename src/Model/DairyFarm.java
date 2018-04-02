@@ -116,6 +116,22 @@ public class DairyFarm {
         cowInformation.get(n).killCow();
     }
 
+    private int getMaxCowProduction() {
+        int ans = 0;
+        for (int i = 0; i < getCowCounts(); i++) {
+            Cow cow = getCowByNumber(i);
+            if (isCowAlive(cow)) {
+                ans += cow.calculateMaxMilkCapacity();
+            }
+        }
+        return ans;
+    }
+
+    public String getInformation() {
+        return "" + getBarbandsCount() + " " + getCowCounts() + " " + storage.getCapacity() + " " + tanks.size() + " "
+                + getMaxCowProduction();
+    }
+
     //from here methods cant have access to arrays;
 
     public boolean isBarbandValid(int barbandNum) {

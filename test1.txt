@@ -1,0 +1,162 @@
+set date
+11/11/11
+invalid date
+1111/11/11
+add barband 10
+add barband 3
+add barband 1
+add cow 1
+cow added. cow num: 1
+add cow 1
+cow added. cow num: 2
+add cow 1
+cow added. cow num: 3
+add cow 2
+cow added. cow num: 4
+add cow 2
+cow added. cow num: 5
+add cow 2
+cow added. cow num: 6
+butcher cow 2
+cow butchered successfully
+add cow 3
+cow added. cow num: 2
+move cow 1 2
+there is not enough space in barband 2
+move cow 4 1
+cow moved successfully
+status cow 3
+cow 3
+age: 0
+hunger: 0
+weight: 200
+milk: 0
+milk produced: 0
+status cow 10
+invalid cow
+increase storage capacity
+invalid command
+increase storage capacity 3
+add storage alfalfa 10
+there is not enough space
+increase storage capacity 50000
+add storage alfalfa 1000
+add storage barley 1000
+add storage strae 1000
+invalid food name
+add storage strae 1000
+invalid food name
+add storage straw 1000
+add new food goodFood 1000
+10
+5
+90
+add new food badFood 1000
+0
+0
+10
+add tank 20
+add tank 1000
+status tanks
+tank 1
+capacity: 20
+empty space: 20
+expiration date: 
+tank 2
+capacity: 1000
+empty space: 1000
+expiration date: 
+day passed
+status barband 1
+barband 1
+number of cows: 3
+capacity: 10
+the remaining food: 
+cows:
+1
+3
+4
+status barband 2
+barband 2
+number of cows: 2
+capacity: 3
+the remaining food: 
+cows:
+5
+6
+status barband 3
+barband 3
+number of cows: 1
+capacity: 1
+the remaining food: 
+cows:
+2
+feed barband 1
+alfalfa 3
+barley 3
+goodFood 3
+badFood 3
+straw 10000
+end_feed
+status cow 1
+cow 1
+age: 1
+hunger: 1
+weight: 200
+milk: 0
+milk produced: 0
+day passed
+status cow 1
+cow 1
+age: 2
+hunger: 6
+weight: 211
+milk: 17
+milk produced: 0
+milk cow 1 1
+cow milked successfully
+milk cow 2 1
+cow has no milk
+milk cow 3 1
+there is not enough space
+status tanks
+tank 1
+capacity: 20
+empty space: 3
+expiration date: 1111/11/16
+tank 2
+capacity: 1000
+empty space: 1000
+expiration date: 
+sell milk 1 1
+milk sold successfully
+day passed
+sell milk 1 1
+milk sold successfully
+day passed
+sell milk 1 1
+milk sold successfully
+day passed
+sell milk 1 1
+milk sold successfully
+day passed
+sell milk 1 1
+there is not enough milk
+status tanks
+tank 1
+capacity: 20
+empty space: 7
+expiration date: 1111/11/16
+tank 2
+capacity: 1000
+empty space: 1000
+expiration date: 
+status cow 3
+invalid cow
+status barband 1
+barband 1
+number of cows: 0
+capacity: 10
+the remaining food: 
+cows:
+end

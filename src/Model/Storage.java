@@ -25,6 +25,10 @@ public class Storage {
         return stock;
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
     public boolean getFromStorage(Feed feed, int amount) {
         if (!feedsCount.containsKey(feed)) {
             return false;

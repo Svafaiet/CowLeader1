@@ -1,0 +1,174 @@
+set date
+invalid date
+cow added. cow num: 1
+cow added. cow num: 2
+storage
+capacity: 1000
+inventory:
+barley 100
+straw 100
+cow 1
+age: 1
+hunger: 5
+weight: 200
+milk: 0
+milk produced: 0
+barband 1
+number of cows: 2
+capacity: 2
+the remaining food: 
+straw 2
+cows:
+1
+2
+cow 1
+age: 1
+hunger: 0
+weight: 200
+milk: 0
+milk produced: 0
+cow 1
+age: 2
+hunger: 4
+weight: 200
+milk: 10
+milk produced: 0
+barband 1
+number of cows: 2
+capacity: 2
+the remaining food: 
+cows:
+1
+2
+cow 1
+age: 3
+hunger: 9
+weight: 196
+milk: 12
+milk produced: 0
+cow 1
+age: 4
+hunger: 14
+weight: 187
+milk: 12
+milk produced: 0
+cow 1
+age: 5
+hunger: 14
+weight: 178
+milk: 0
+milk produced: 0
+cow 1
+age: 6
+hunger: 14
+weight: 169
+milk: 0
+milk produced: 0
+cow 1
+age: 7
+hunger: 14
+weight: 160
+milk: 0
+milk produced: 0
+cow 1
+age: 8
+hunger: 14
+weight: 151
+milk: 0
+milk produced: 0
+cow 1
+age: 9
+hunger: 14
+weight: 142
+milk: 0
+milk produced: 0
+cow 1
+age: 10
+hunger: 14
+weight: 133
+milk: 0
+milk produced: 0
+cow 1
+age: 11
+hunger: 15
+weight: 124
+milk: 0
+milk produced: 0
+cow 1
+age: 12
+hunger: 16
+weight: 114
+milk: 0
+milk produced: 0
+invalid cow
+barband 1
+number of cows: 0
+capacity: 2
+the remaining food: 
+cows:
+cow added. cow num: 1
+cow has no milk
+cow 1
+age: 0
+hunger: 0
+weight: 200
+milk: 0
+milk produced: 0
+barband 1
+number of cows: 1
+capacity: 2
+the remaining food: 
+food1 3
+cows:
+1
+cow 1
+age: 1
+hunger: 2
+weight: 200
+milk: 0
+milk produced: 0
+there is not enough space
+cow milked successfully
+tank 1
+capacity: 20
+empty space: 20
+expiration date: 
+tank 2
+capacity: 30
+empty space: 9
+expiration date: 1111/11/29
+milk sold successfully
+invalid command
+tank 1
+capacity: 20
+empty space: 20
+expiration date: 
+tank 2
+capacity: 30
+empty space: 10
+expiration date: 1111/11/29
+milk sold successfully
+milk sold successfully
+there is not enough milk
+tank 1
+capacity: 20
+empty space: 20
+expiration date: 
+tank 2
+capacity: 30
+empty space: 12
+expiration date: 1111/11/29
+tank 1
+capacity: 20
+empty space: 20
+expiration date: 
+tank 2
+capacity: 30
+empty space: 30
+expiration date: 
+dairy farm
+number of barbands: 1
+number of cows: 0
+storage capacity: 1000
+milk tank num: 2
+max milk production: 0

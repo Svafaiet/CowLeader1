@@ -38,4 +38,9 @@ public class Date {
         day %= 30;
         month %= 12;
     }
+
+    @Override
+    public String toString() {
+        return year + "/" + month + "/" + day;
+    }
 }

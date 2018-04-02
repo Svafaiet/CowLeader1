@@ -1,0 +1,138 @@
+set date
+1111/11/11
+add barband 10
+add cow 1
+cow added. cow num: 1
+add barband 2
+add cow 2
+cow added. cow num: 2
+day passed
+day passed
+day passed
+status barband 1
+barband 1
+number of cows: 1
+capacity: 10
+the remaining food: 
+cows:
+1
+day passed
+status barband 1
+barband 1
+number of cows: 0
+capacity: 10
+the remaining food: 
+cows:
+add cow 1
+cow added. cow num: 1
+add cow 1
+cow added. cow num: 2
+add cow 2
+cow added. cow num: 3
+increase storage capacity 10000
+add barley 1000
+invalid command
+add storage barley 1000
+feed barband 1
+barley 10
+end_feed
+status barband 1
+barband 1
+number of cows: 2
+capacity: 10
+the remaining food: 
+barley 10
+cows:
+1
+2
+day passed
+status barband 1
+barband 1
+number of cows: 2
+capacity: 10
+the remaining food: 
+cows:
+1
+2
+feed barband 2
+barley 100
+end_feed
+day passed
+status barband 2
+barband 2
+number of cows: 1
+capacity: 2
+the remaining food: 
+barley 90
+cows:
+3
+day passed
+day passed
+day passed
+day passed
+status cow 3
+cow 3
+age: 6
+hunger: 0
+weight: 300
+milk: 0
+milk produced: 0
+status barband 2
+barband 2
+number of cows: 1
+capacity: 2
+the remaining food: 
+barley 70
+cows:
+3
+day passed
+day passed
+day passed
+status cow 3
+cow 3
+age: 9
+hunger: 0
+weight: 360
+milk: 0
+milk produced: 0
+status barband 2
+barband 2
+number of cows: 1
+capacity: 2
+the remaining food: 
+barley 55
+cows:
+3
+day passed
+status barband 2
+barband 2
+number of cows: 1
+capacity: 2
+the remaining food: 
+barley 50
+cows:
+3
+status cow 3
+cow 3
+age: 10
+hunger: 0
+weight: 380
+milk: 0
+milk produced: 0
+day passed
+status barband 2
+barband 2
+number of cows: 1
+capacity: 2
+the remaining food: 
+barley 44
+cows:
+3
+status cow 3
+cow 3
+age: 11
+hunger: 0
+weight: 400
+milk: 0
+milk produced: 0
+end

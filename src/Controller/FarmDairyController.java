@@ -1,9 +1,12 @@
 package Controller;
 
+import Model.Cow;
 import Model.DairyFarm;
+import Model.ReturnValues.AddToStorageReturnValue;
 import Model.ReturnValues.MilkCowReturnValue;
 import Model.ReturnValues.MoveCowReturnValue;
 import Model.ReturnValues.SellMilkReturnValue;
+import Model.Tank;
 import View.DairyFarmView;
 import View.ViewRequest;
 
@@ -12,17 +15,18 @@ public class FarmDairyController {
     private DairyFarmView dairyFarmView;
     private ViewRequest viewRequest;
     private WhichPartAreWeIn whichPartAreWeIn;
-    private int feedProperties;
-    private 
 
-    private int barbandNum;
-    private String foodName;
-    private int foodCount;
+    private int feedPropertiesCount;
+    private int saveBarbandNum;
+    private String saveFoodName;
+    private int saveFoodCount;
+    private int[] saveFeedProperties;
 
     public FarmDairyController() {
         dairyFarmView = new DairyFarmView();
         whichPartAreWeIn = WhichPartAreWeIn.SET_DATE;
-        feedProperties = 0;
+        feedPropertiesCount = 0;
+        saveFeedProperties = new int[3];
     }
 
     public void takeCommand() {
@@ -67,11 +71,19 @@ public class FarmDairyController {
             case END:
                 break;
             case FEED_PROPERTIES:
-                feedProperties++;
-                if (feedProperties == 3) {
-                    feedProperties = 0;
+                saveFeedProperties[feedPropertiesCount] = Integer.parseInt(viewRequest.getRequestWord(1));
+                feedPropertiesCount++;
+                if (feedPropertiesCount == 3) {
+                    feedPropertiesCount = 0;
                     whichPartAreWeIn = WhichPartAreWeIn.MENU;
+                    dairyFarmModel.addNewFoodToStorage(saveFoodCount, saveFoodName,
+                            saveFeedProperties[2], saveFeedProperties[1], saveFeedProperties[0]);
                 }
+                break;
+            default:
+                dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_COMMAND));
+                whichPartAreWeIn = WhichPartAreWeIn.MENU;
+                //may be this change fixme
                 break;
         }
 
@@ -82,11 +94,11 @@ public class FarmDairyController {
             case END:
                 break;
             case END_FEED:
-                barbandNum = -1;
+                saveBarbandNum = -1;
                 whichPartAreWeIn = WhichPartAreWeIn.MENU;
                 break;
             case FEED_TYPES:
-                dairyFarmModel.feedBarband(barbandNum, viewRequest.getRequestWord(1),
+                dairyFarmModel.feedBarband(saveBarbandNum, viewRequest.getRequestWord(1),
                         Integer.parseInt(viewRequest.getRequestWord(2)));
                 break;
             default:
@@ -100,7 +112,7 @@ public class FarmDairyController {
         switch (viewRequest.getCommandType()) {
             case FEED_BARBAND:
                 if (dairyFarmModel.isBarbandValid(Integer.parseInt(viewRequest.getRequestWord(3)))) {
-                    barbandNum = Integer.parseInt(viewRequest.getRequestWord(3));
+                    saveBarbandNum = Integer.parseInt(viewRequest.getRequestWord(3));
                     whichPartAreWeIn = WhichPartAreWeIn.GET_FEED_PROPERTIES;
                 } else {
                     dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_BARBAND));
@@ -108,8 +120,8 @@ public class FarmDairyController {
                 break;
             case ADD_NEW_FOOD:
                 whichPartAreWeIn = WhichPartAreWeIn.GET_FEED_PROPERTIES;
-                foodName = viewRequest.getRequestWord(4);
-                foodCount = Integer.parseInt(viewRequest.getRequestWord(5));
+                saveFoodName = viewRequest.getRequestWord(4);
+                saveFoodCount = Integer.parseInt(viewRequest.getRequestWord(5));
                 break;
             case END:
                 break;
@@ -164,7 +176,7 @@ public class FarmDairyController {
             case MILK_COW:
                 MilkCowReturnValue milkCowReturnValue =
                         dairyFarmModel.milkCow(Integer.parseInt(viewRequest.getRequestWord(3)),
-                        Integer.parseInt(viewRequest.getRequestWord(4)));
+                                Integer.parseInt(viewRequest.getRequestWord(4)));
                 switch (milkCowReturnValue) {
                     case NOT_ENOUGH_SPACE:
                         dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.THERE_IS_NOT_ENOUGH_SPACE));
@@ -184,7 +196,7 @@ public class FarmDairyController {
                 }
                 break;
             case EMPTY_TANK:
-                if(!dairyFarmModel.emtptyTank(Integer.parseInt(viewRequest.getRequestWord(3)))){
+                if (!dairyFarmModel.emtptyTank(Integer.parseInt(viewRequest.getRequestWord(3)))) {
                     dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_TANK));
                 }
                 break;
@@ -192,14 +204,61 @@ public class FarmDairyController {
                 dairyFarmModel.addTank(Integer.parseInt(viewRequest.getRequestWord(3)));
                 break;
             case BUTCHER_COW:
-                if(dairyFarmModel.butcherCow(Integer.parseInt(viewRequest.getRequestWord(3)))) {
+                if (dairyFarmModel.butcherCow(Integer.parseInt(viewRequest.getRequestWord(3)))) {
                     dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.BUTCHER_COW));
                 } else {
                     dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_COW));
                 }
                 break;
             case ADD_FOOD_TO_STORAGE:
-                dairyFarmModel.a
+                AddToStorageReturnValue addToStorageReturnValue =
+                        dairyFarmModel.addToStorage(viewRequest.getRequestWord(3),
+                                Integer.parseInt(viewRequest.getRequestWord(4)));
+                switch (addToStorageReturnValue) {
+                    case NOT_ENOUGH_SPACE:
+                        dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.THERE_IS_NOT_ENOUGH_SPACE));
+                        break;
+                    case NO_SUCH_A_FOOD:
+                        dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_FOOD_NAME));
+                        break;
+                    case ADDED_SUCCESSFULLY:
+                        break;
+                }
+            case INCREASE_STORAGE_CAPACITY:
+                dairyFarmModel.increaseStorageCapacity(Integer.parseInt(viewRequest.getRequestWord(4)));
+                break;
+            case SHOW_RANKS:
+                break;
+            case STATUS_COW:
+                Cow cow = dairyFarmModel.getCowByNumber(Integer.parseInt(viewRequest.getRequestWord(3)))
+                if (cow == null) {
+                    dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_COMMAND));
+                } else {
+                    dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.SHOW_COW,
+                            cow.getInformation().split(" ")));
+                }
+
+                break;
+            case STATUS_FARM:
+                dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.SHOW_FARM,
+                        dairyFarmModel.getInformation().split(" ")));
+                break;
+            case STATUS_TANKS:
+                for (int i = 0; i < dairyFarmModel.getTanks().size(); i++) {
+                    Tank tank = dairyFarmModel.getTanks().get(i);
+                    dairyFarmView.showControllerRequest(
+                            new ControllerRequest(ControllerRequestType.SHOW_TANK, i + tank.getInvo));
+                }
+                break;
+            case STATUS_BARBAND:
+
+                break;
+            case STATUS_STORAGE:
+
+                break;
+                default:
+                    dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_COMMAND));
+                    break;
         }
     }
 }
