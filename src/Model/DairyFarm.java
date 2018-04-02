@@ -66,7 +66,7 @@ public class DairyFarm {
     }
 
     public CowInformation getCowInformation(int n) {
-        if(n > cowInformation.size()) {
+        if (n > cowInformation.size()) {
             return CowInformation.DEAD_COW;
         }
         return cowInformation.get(n - 1);
@@ -118,20 +118,18 @@ public class DairyFarm {
 
     //from here methods cant have access to arrays;
 
-    public boolean feedBarband(int barbandNum, Map<String, Integer> feedsCount) {
-        if (getBarbandsCount() < barbandNum) {
-            return false;
-        } else {
-            for (String feedName : feedsCount.keySet()) {
-                Feed feed = Feeds.findFeedByName(feedName);
-                if(feed != null) {
-                    if (storage.getFromStorage(feed, feedsCount.get(feedName))) {
-                        getBarband(barbandNum).feedBarband(feed, feedsCount.get(feedName));
-                    }
-                }
+    public boolean isBarbandValid(int barbandNum) {
+        return (getBarbandsCount() >= barbandNum);
+    }
+
+    public void feedBarband(int barbandNum, String feedName, int feedCount) {
+        Feed feed = Feeds.findFeedByName(feedName);
+        if (feed != null) {
+            if (storage.getFromStorage(feed, feedCount)) {
+                getBarband(barbandNum).feedBarband(feed, feedCount);
             }
-            return true;
         }
+
     }
 
     public MilkCowReturnValue milkCow(int cowNum, int tankNum) {
@@ -198,11 +196,11 @@ public class DairyFarm {
         if (!isCowAlive(cowNum)) {
             return MoveCowReturnValue.INVALID_COW;
         }
-        if(barbandNum > getBarbandsCount()) {
+        if (barbandNum > getBarbandsCount()) {
             return MoveCowReturnValue.INVALID_BARBAND;
         }
         int cowNumInBarband = getBarband(getCowInformation(cowNum).getBarbandNum()).addCow(getCowByNumber(cowNum));
-        if(cowNumInBarband == -1) {
+        if (cowNumInBarband == -1) {
             return MoveCowReturnValue.NOT_ENOUGH_SPACE;
         } else {
             getCowInformation(cowNum).move(barbandNum, cowNumInBarband);
@@ -222,7 +220,7 @@ public class DairyFarm {
         today.datePlusPlus();
         for (int i = 0; i < getCowCounts(); i++) {
             Cow cow = getCowByNumber(i);
-            if(isCowAlive(cow)) {
+            if (isCowAlive(cow)) {
                 cow.update();
                 if (cow.hasDied()) {
                     butcherCow(i);

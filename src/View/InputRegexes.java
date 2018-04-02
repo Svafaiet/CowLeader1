@@ -11,7 +11,7 @@ public class InputRegexes {
     public static final String FEED_BARBAND = "\\s*^(\\s*feed\\s+barband\\s+\\d+\\s*)$\\s*";
     public static final String STATUS_STORAGE = "\\s*^(\\s*status\\s+storage\\s*)$\\s*";
     public static final String STATUS_TANKS = "\\s*^(\\s*status\\s+tanks\\s*)$\\s*";
-    public static final String MILK_CO = "\\s*^(\\s*milk\\s+cow\\s+\\d+\\s+\\d+\\s*)$\\s*";
+    public static final String MILK_COW = "\\s*^(\\s*milk\\s+cow\\s+\\d+\\s+\\d+\\s*)$\\s*";
     public static final String ADD_FOOD_TO_STORAGE = "\\s*^(\\s*add\\s+storage\\s+\\S+\\s+\\d+\\s*)$\\s*";
     public static final String SELL_MILK = "\\s*^(\\s*sell\\s+milk\\s+\\d+\\s+\\d+\\s*)$\\s*";
     public static final String EMPTY_TANK = "\\s*^(\\s*empty\\s+tank\\s+\\d+\\s*)$\\s*";
@@ -20,5 +20,9 @@ public class InputRegexes {
     public static final String SHOW_RANKS = "\\s*^(\\s*show\\s+ranks\\s*)$\\s*";
     public static final String INCREASE_STORAGE_CAPACITY = "\\s*^(\\s*increase\\s+storage\\s+capacity\\s+\\d+\\s*)$\\s*";
     public static final String ADD_NEW_FOOD = "\\s*^(\\s*add\\s+new\\s+food\\s+\\S+\\s+\\d+\\s*)$\\s*";
-    public static final String END_DAY = "\\s*^(\\s*END\\s+DAY\\s+\\d+\\s*)$\\s*";
+    public static final String END_DAY = "\\s*^(\\s*day\\s+passed\\s+\\d+\\s*)$\\s*";
+    public static final String FEED_TYPE = "\\s*^(\\s*\\S+\\s+\\d+\\s*)$\\s*";
+    public static final String END_FEED = "\\s*^(\\s*end\\_feed\\s+\\d+\\s*)$\\s*";
+    public static final String FEED_PROPERTIES = "\\s*^(\\s*\\d+\\s*)$\\s*";
+    public static final String END = "\\s*^(\\s*end\\s*)$\\s*";
 }

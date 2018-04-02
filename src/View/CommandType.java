@@ -1,6 +1,6 @@
 package View;
 
-public enum Command {
+public enum CommandType {
     SET_DATE ,
     ADD_BAEBAND ,
     STATUS_BARBAND ,
@@ -11,7 +11,7 @@ public enum Command {
     FEED_BARBAND ,
     STATUS_STORAGE ,
     STATUS_TANKS ,
-    MILK_CO ,
+    MILK_COW ,
     ADD_FOOD_TO_STORAGE ,
     SELL_MILK ,
     EMPTY_TANK ,
@@ -20,5 +20,10 @@ public enum Command {
     SHOW_RANKS ,
     INCREASE_STORAGE_CAPACITY ,
     ADD_NEW_FOOD ,
-    END_DAY
+    END_DAY ,
+    FEED_TYPES ,
+    END_FEED ,
+    FEED_PROPERTIES ,
+    END ,
+    INVALID_COMMAND
 }
