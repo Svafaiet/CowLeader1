@@ -18,6 +18,6 @@ public class ViewRequest {
     }
 
     public String getRequestWord(int n) {
-        return request[n-1]; //fixme;
+        return request[n-1]; //alert fixme
     }
 }

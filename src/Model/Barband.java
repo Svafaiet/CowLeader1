@@ -67,6 +67,37 @@ public class Barband {
     public void removeCow(int cowNumberInBarband) {
         cows[cowNumberInBarband - 1] = null;
     }
+
+    private String getFeedsInformation() {
+        ArrayList<Feed> feeds = new ArrayList<>(akhoor.getFeedsCount().keySet());
+        Collections.sort(feeds);
+        int noneZeroFeedCount = 0;
+        String feedInformation = "";
+        for (Feed feed : feeds) {
+            if (akhoor.getFeedsCount().get(feed) != 0) {
+                noneZeroFeedCount++;
+                feedInformation +=
+                        " " + feed.getName() + " " + akhoor.getFeedsCount().get(feed);
+            }
+        }
+        return "" + noneZeroFeedCount + feedInformation;
+    }
+
+    public String getInformation() {
+        ArrayList<Integer> cowNumbers = new ArrayList<>();
+        for (Cow cow : this.cows) {
+            if(cow != null) {
+                cowNumbers.add(cow.getNum());
+            }
+        }
+        Collections.sort(cowNumbers);
+        String numbers = "";
+        for (Integer num : cowNumbers) {
+            numbers += " " + num;
+        }
+
+        return  "" + cowNumbers.size() + " " + cows.length + " " + getFeedsInformation() + numbers;
+    }
 }
 
 class Akhoor {
@@ -77,6 +108,10 @@ class Akhoor {
         feedsCount.put(Feeds.findFeedByName("barley"), 0);
         feedsCount.put(Feeds.findFeedByName("alfalfa"), 0);
         feedsCount.put(Feeds.findFeedByName("straw"), 0);
+    }
+
+    public Map<Feed, Integer> getFeedsCount() {
+        return feedsCount;
     }
 
     public boolean hasStock() {

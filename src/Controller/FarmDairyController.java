@@ -140,15 +140,27 @@ public class FarmDairyController {
                         dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.MOVE_COW));
                         break;
                     case NOT_ENOUGH_SPACE:
-                        dairyFarmView.showControllerRequest(new ControllerRequest());
+                        String[] barbandNum = new String[1];
+                        barbandNum[0] = viewRequest.getRequestWord(4);
+                        dairyFarmView.showControllerRequest(
+                                new ControllerRequest(
+                                        ControllerRequestType.THERE_IS_NOT_ENOUGH_SPACE_IN_BARBAND, barbandNum
+                                )
+                        );
                         break;
                 }
                 break;
             case ADD_COW:
                 if (dairyFarmModel.addNewCow(Integer.parseInt(viewRequest.getRequestWord(3)))) {
-                    dairyFarmView.showControllerRequest(new ControllerRequest());
+                    String[] cowNum = new String[1];
+                    cowNum[0] = String.valueOf(dairyFarmModel.getCowCounts());
+                    dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.COW_ADDED, cowNum));
                 } else {
-                    dairyFarmView.showControllerRequest(new ControllerRequest());
+                    String[] barbandNum = new String[1];
+                    barbandNum[0] = viewRequest.getRequestWord(3);
+                    dairyFarmView.showControllerRequest(
+                            new ControllerRequest(ControllerRequestType.THERE_IS_NOT_ENOUGH_SPACE_IN_BARBAND,
+                                    barbandNum));
                 }
                 break;
             case END_DAY:
@@ -230,14 +242,13 @@ public class FarmDairyController {
             case SHOW_RANKS:
                 break;
             case STATUS_COW:
-                Cow cow = dairyFarmModel.getCowByNumber(Integer.parseInt(viewRequest.getRequestWord(3)))
+                Cow cow = dairyFarmModel.getCowByNumber(Integer.parseInt(viewRequest.getRequestWord(3)));
                 if (cow == null) {
                     dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_COMMAND));
                 } else {
                     dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.SHOW_COW,
                             cow.getInformation().split(" ")));
                 }
-
                 break;
             case STATUS_FARM:
                 dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.SHOW_FARM,
@@ -247,18 +258,25 @@ public class FarmDairyController {
                 for (int i = 0; i < dairyFarmModel.getTanks().size(); i++) {
                     Tank tank = dairyFarmModel.getTanks().get(i);
                     dairyFarmView.showControllerRequest(
-                            new ControllerRequest(ControllerRequestType.SHOW_TANK, i + tank.getInvo));
+                            new ControllerRequest(ControllerRequestType.SHOW_TANK,
+                                    ((i + 1) + " " + tank.getInformation()).split(" ")));
                 }
                 break;
             case STATUS_BARBAND:
-
+                String barbandNum = viewRequest.getRequestWord(3);
+                dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.SHOW_BARBAND,
+                        (barbandNum + " " + dairyFarmModel.getBarband(Integer.parseInt(barbandNum)).getInformation())
+                                .split(" ")));
                 break;
             case STATUS_STORAGE:
-
+                dairyFarmView.showControllerRequest(
+                        new ControllerRequest(ControllerRequestType.SHOW_STORAGE,
+                                dairyFarmModel.getStorage().getInformation().split(" "))
+                );
                 break;
-                default:
-                    dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_COMMAND));
-                    break;
+            default:
+                dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_COMMAND));
+                break;
         }
     }
 }

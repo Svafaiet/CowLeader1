@@ -2,12 +2,14 @@ package Model;
 
 import Model.ReturnValues.AddToStorageReturnValue;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Storage {
     private int capacity;
-    public Map<Feed, Integer> feedsCount;
+    private Map<Feed, Integer> feedsCount;
 
     public Storage() {
         capacity = 0;
@@ -60,5 +62,23 @@ public class Storage {
 
     public void increaseStorageCapacity(int n) {
         capacity += n;
+    }
+
+    public String getInformation() {
+        String ans;
+        ans = "" + capacity;
+        ArrayList<Feed> feeds = new ArrayList<>(feedsCount.keySet());
+        Collections.sort(feeds);
+        int noneZeroFeedCount = 0;
+        String feedInformation = "";
+        for (Feed feed : feeds) {
+            if (feedsCount.get(feed) != 0) {
+                noneZeroFeedCount++;
+                feedInformation +=
+                        " " + feed.getName() + " " + feedsCount.get(feed);
+            }
+        }
+        ans += " " + noneZeroFeedCount + feedInformation;
+        return ans;
     }
 }
