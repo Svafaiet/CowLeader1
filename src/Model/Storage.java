@@ -75,7 +75,7 @@ public class Storage {
             if (feedsCount.get(feed) != 0) {
                 noneZeroFeedCount++;
                 feedInformation +=
-                        " " + feed.getName() + " " + feedsCount.get(feed);
+                        " " + feed.getName() + Controller.Separator.SEPARATOR + feedsCount.get(feed);
             }
         }
         ans += " " + noneZeroFeedCount + feedInformation;

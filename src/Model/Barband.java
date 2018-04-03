@@ -1,5 +1,7 @@
 package Model;
 
+import Controller.Separator;
+
 import java.util.*;
 
 public class Barband {
@@ -77,7 +79,7 @@ public class Barband {
             if (akhoor.getFeedsCount().get(feed) != 0) {
                 noneZeroFeedCount++;
                 feedInformation +=
-                        " " + feed.getName() + " " + akhoor.getFeedsCount().get(feed);
+                        " " + feed.getName() + Separator.SEPARATOR + akhoor.getFeedsCount().get(feed);
             }
         }
         return "" + noneZeroFeedCount + feedInformation;

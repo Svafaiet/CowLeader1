@@ -114,8 +114,8 @@ public class DairyFarm {
     }
 
     private void killCow(int n) {
-        getBarband(cowInformation.get(n).getBarbandNum()).removeCow(cowInformation.get(n).getCowNumInBarband());
-        cowInformation.get(n).killCow();
+        getBarband(getCowInformation(n).getBarbandNum()).removeCow(getCowInformation(n).getCowNumInBarband());
+        getCowInformation(n).killCow();
     }
 
     private int getMaxCowProduction() {
@@ -211,13 +211,14 @@ public class DairyFarm {
     }
 
     public MoveCowReturnValue moveCow(int cowNum, int barbandNum) {
+        //fixme moving cow to its barband not supported
         if (!isCowAlive(cowNum)) {
             return MoveCowReturnValue.INVALID_COW;
         }
         if (barbandNum > getBarbandsCount()) {
             return MoveCowReturnValue.INVALID_BARBAND;
         }
-        int cowNumInBarband = getBarband(getCowInformation(cowNum).getBarbandNum()).addCow(getCowByNumber(cowNum));
+        int cowNumInBarband = getBarband(barbandNum).addCow(getCowByNumber(cowNum));
         if (cowNumInBarband == -1) {
             return MoveCowReturnValue.NOT_ENOUGH_SPACE;
         } else {

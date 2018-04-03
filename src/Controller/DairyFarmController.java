@@ -143,7 +143,7 @@ public class DairyFarmController {
                 milkCow();
                 break;
             case EMPTY_TANK:
-                emtyTank();
+                emptyTank();
                 break;
             case ADD_BAEBAND:
                 dairyFarmModel.addBarband(Integer.parseInt(viewRequest.getRequestWord(3)));
@@ -199,7 +199,7 @@ public class DairyFarmController {
             Tank tank = dairyFarmModel.getTanks().get(i);
             dairyFarmView.showControllerRequest(
                     new ControllerRequest(ControllerRequestType.SHOW_TANK,
-                            ((i + 1) + " " + tank.getInformation()).split(" ")));
+                            (String.valueOf(i + 1) + " " + tank.getInformation()).split(" ")));
         }
     }
 
@@ -211,14 +211,14 @@ public class DairyFarmController {
     private void statusCow() {
         Cow cow = dairyFarmModel.getCowByNumber(Integer.parseInt(viewRequest.getRequestWord(3)));
         if (cow == null) {
-            dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_COMMAND));
+            dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_COW));
         } else {
             dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.SHOW_COW,
                     cow.getInformation().split(" ")));
         }
     }
 
-    private void addFoodToStorage() {
+    private void addFoodToStorage() { //fixme
         AddToStorageReturnValue addToStorageReturnValue =
                 dairyFarmModel.addToStorage(viewRequest.getRequestWord(3),
                         Integer.parseInt(viewRequest.getRequestWord(4)));
@@ -242,7 +242,7 @@ public class DairyFarmController {
         }
     }
 
-    private void emtyTank() {
+    private void emptyTank() {
         if (!dairyFarmModel.emtptyTank(Integer.parseInt(viewRequest.getRequestWord(3)))) {
             dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_TANK));
         }

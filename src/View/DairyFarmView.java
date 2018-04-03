@@ -1,6 +1,7 @@
 package View;
 
 import Controller.ControllerRequest;
+import Controller.Separator;
 
 import java.util.Scanner;
 
@@ -223,8 +224,8 @@ public class DairyFarmView {
         output = Massage.SHOW_COW.replaceAll("COW_NUM", information[0]);
         output = output.replaceAll("AGE", information[1]);
         output = output.replaceAll("HUNGER", information[2]);
-        output = output.replaceAll("WIGHT", information[3]);
-        output = output.replaceAll("MILK", information[4]);
+        output = output.replaceAll("WEIGHT", information[3]);
+        output = output.replaceFirst("MILK", information[4]);
         output = output.replaceAll("MILK_PRODUCED", information[5]);
         System.out.println(output);
     }
@@ -235,7 +236,7 @@ public class DairyFarmView {
         output = output.replaceAll("CAPACITY", information[1]);
         output = output.replaceAll("EMPTY_SPACE", information[2]);
         output = output.replaceAll("EXPDA", information[3]);
-        output = output.replaceAll(" NO_EXPDA", "");
+        output = output.replaceAll("NO_EXPDA", "");
         System.out.println(output);
     }
 
@@ -246,7 +247,7 @@ public class DairyFarmView {
         for (int i = 0; i < feedCount; i++) {
             output = output.replaceAll("FEEDS", information[2 + i] + "\nFEEDS" );
         }
-        output = output.replaceAll("FEEDS\n", ""); //fixme maybe
+        output = output.replaceAll("FEEDS", "").replaceAll(Separator.SEPARATOR, " "); //fixme maybe
         System.out.println(output);
     }
 
@@ -260,11 +261,10 @@ public class DairyFarmView {
         for (int i = 0; i < feedCount; i++) {
             output = output.replaceAll("REMAINING_FEED", information[4 + i] + "\nREMAINING_FEED");
         }
-        output = output.replaceAll("REMAINING_FEED\n", "");  //fixme maybe
+        output = output.replaceAll("REMAINING_FEED", "").replaceAll(Separator.SEPARATOR, " ");  //fixme maybe
         for (int i = 0; i < cowCount; i++) {
             output = output.replaceAll("COW_NUMBERS", information[4 + feedCount + i] + "\nCOW_NUMBERS");
         }
-        output = output.replaceAll("COW_NUMBERS\n", ""); //fixme maybe
+        output = output.replaceAll("COW_NUMBERS", ""); //fixme maybe
     }
 }
-

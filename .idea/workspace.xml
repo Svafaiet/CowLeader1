@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f26ae8e3-68a1-403b-a6b9-9967318521fe" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Controller/Separator.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FarmDairyController.java" afterPath="$PROJECT_DIR$/src/Controller/DairyFarmController.java" />
+      <change beforePath="$PROJECT_DIR$/out/production/CowLeader1/Controller/DairyFarmController.class" afterPath="$PROJECT_DIR$/out/production/CowLeader1/Controller/DairyFarmController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/CowLeader1/Model/DairyFarm.class" afterPath="$PROJECT_DIR$/out/production/CowLeader1/Model/DairyFarm.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/CowLeader1/View/DairyFarmView.class" afterPath="$PROJECT_DIR$/out/production/CowLeader1/View/DairyFarmView.class" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DairyFarmController.java" afterPath="$PROJECT_DIR$/src/Controller/DairyFarmController.java" />
       <change beforePath="$PROJECT_DIR$/src/Model/Barband.java" afterPath="$PROJECT_DIR$/src/Model/Barband.java" />
       <change beforePath="$PROJECT_DIR$/src/Model/DairyFarm.java" afterPath="$PROJECT_DIR$/src/Model/DairyFarm.java" />
-      <change beforePath="$PROJECT_DIR$/src/View/CommandType.java" afterPath="$PROJECT_DIR$/src/View/CommandType.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Storage.java" afterPath="$PROJECT_DIR$/src/Model/Storage.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Tank.java" afterPath="$PROJECT_DIR$/src/Model/Tank.java" />
       <change beforePath="$PROJECT_DIR$/src/View/DairyFarmView.java" afterPath="$PROJECT_DIR$/src/View/DairyFarmView.java" />
-      <change beforePath="$PROJECT_DIR$/src/View/InputRegexes.java" afterPath="$PROJECT_DIR$/src/View/InputRegexes.java" />
-      <change beforePath="$PROJECT_DIR$/src/View/Massage.java" afterPath="$PROJECT_DIR$/src/View/Massage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +27,8 @@
       <file leaf-file-name="Cow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Cow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+            <state relative-caret-position="172">
+              <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
               <folding>
                 <element signature="method#isCowMilkingAbilityLost#0;class#Cow#0" expanded="false" />
                 <element signature="method#calculateMaxMilkCapacity#0;class#Cow#0" expanded="false" />
@@ -36,11 +38,9 @@
                 <element signature="method#update#0;class#Cow#0" expanded="false" />
                 <element signature="method#hasDied#0;class#Cow#0" expanded="false" />
                 <element signature="class#CowPhysiology#0" expanded="false" />
-                <element signature="e#3941#3942#0" expanded="true" />
                 <element signature="e#3974#3975#0" expanded="true" />
+                <element signature="e#4013#4014#0" expanded="true" />
                 <element signature="e#4051#4052#0" expanded="true" />
-                <element signature="method#killCow#0;class#CowInformation#0" expanded="false" />
-                <element signature="method#move#0;class#CowInformation#0" expanded="false" />
                 <element signature="method#CowTurn#0;class#CowTurn#0" expanded="false" />
                 <element signature="method#compareTo#0;class#CowTurn#0" expanded="false" />
               </folding>
@@ -51,91 +51,171 @@
       <file leaf-file-name="DairyFarmView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/DairyFarmView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="74" column="55" lean-forward="true" selection-start-line="74" selection-start-column="55" selection-end-line="74" selection-end-column="55" />
               <folding>
-                <element signature="method#distinguishCommandType#0;class#DairyFarmView#0" expanded="false" />
-                <element signature="e#6229#6230#0" expanded="true" />
-                <element signature="e#6296#6297#0" expanded="true" />
-                <element signature="e#6330#6331#0" expanded="true" />
-                <element signature="e#6382#6383#0" expanded="true" />
-                <element signature="e#6420#6421#0" expanded="true" />
-                <element signature="e#6475#6476#0" expanded="true" />
-                <element signature="e#6516#6517#0" expanded="true" />
-                <element signature="e#6585#6586#0" expanded="true" />
-                <element signature="e#6625#6626#0" expanded="true" />
-                <element signature="e#6693#6694#0" expanded="true" />
-                <element signature="e#6726#6727#0" expanded="true" />
-                <element signature="e#6785#6786#0" expanded="true" />
-                <element signature="e#6820#6821#0" expanded="true" />
-                <element signature="e#6886#6887#0" expanded="true" />
-                <element signature="e#6927#6928#0" expanded="true" />
-                <element signature="e#6986#6987#0" expanded="true" />
-                <element signature="e#7028#7029#0" expanded="true" />
-                <element signature="e#7089#7090#0" expanded="true" />
-                <element signature="e#7127#7128#0" expanded="true" />
-                <element signature="e#7183#7184#0" expanded="true" />
-                <element signature="e#7221#7222#0" expanded="true" />
-                <element signature="e#7277#7278#0" expanded="true" />
-                <element signature="e#7318#7319#0" expanded="true" />
-                <element signature="e#7377#7378#0" expanded="true" />
-                <element signature="e#7414#7415#0" expanded="true" />
-                <element signature="e#7469#7470#0" expanded="true" />
+                <element signature="e#6258#6259#0" expanded="true" />
+                <element signature="e#6325#6326#0" expanded="true" />
+                <element signature="e#6359#6360#0" expanded="true" />
+                <element signature="e#6411#6412#0" expanded="true" />
+                <element signature="e#6449#6450#0" expanded="true" />
+                <element signature="e#6504#6505#0" expanded="true" />
+                <element signature="e#6545#6546#0" expanded="true" />
+                <element signature="e#6614#6615#0" expanded="true" />
+                <element signature="e#6654#6655#0" expanded="true" />
+                <element signature="e#6722#6723#0" expanded="true" />
+                <element signature="e#6755#6756#0" expanded="true" />
+                <element signature="e#6814#6815#0" expanded="true" />
+                <element signature="e#6849#6850#0" expanded="true" />
+                <element signature="e#6915#6916#0" expanded="true" />
+                <element signature="e#6956#6957#0" expanded="true" />
+                <element signature="e#7015#7016#0" expanded="true" />
+                <element signature="e#7057#7058#0" expanded="true" />
+                <element signature="e#7118#7119#0" expanded="true" />
+                <element signature="e#7156#7157#0" expanded="true" />
+                <element signature="e#7212#7213#0" expanded="true" />
+                <element signature="e#7250#7251#0" expanded="true" />
+                <element signature="e#7306#7307#0" expanded="true" />
+                <element signature="e#7347#7348#0" expanded="true" />
+                <element signature="e#7406#7407#0" expanded="true" />
+                <element signature="e#7443#7444#0" expanded="true" />
+                <element signature="e#7498#7499#0" expanded="true" />
                 <element signature="method#showNotEnoughSpaceInBarband#0;class#DairyFarmView#0" expanded="false" />
+                <element signature="method#showCowAdded#0;class#DairyFarmView#0" expanded="false" />
                 <element signature="method#showFarm#0;class#DairyFarmView#0" expanded="false" />
                 <element signature="method#showCow#0;class#DairyFarmView#0" expanded="false" />
-                <element signature="method#showTank#0;class#DairyFarmView#0" expanded="false" />
+                <element signature="method#showStorage#0;class#DairyFarmView#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputRegexes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/InputRegexes.java">
+      <file leaf-file-name="Separator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Separator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
-              <caret line="7" column="77" lean-forward="false" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
+              <caret line="4" column="63" lean-forward="false" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DairyFarmController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DairyFarmController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/DairyFarmController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="237" column="0" lean-forward="false" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
+            <state relative-caret-position="160">
+              <caret line="79" column="25" lean-forward="false" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
               <folding>
                 <element signature="method#DairyFarmController#0;class#DairyFarmController#0" expanded="false" />
                 <element signature="e#966#967#0" expanded="true" />
                 <element signature="e#1036#1037#0" expanded="true" />
+                <element signature="method#handleCommands#0;class#DairyFarmController#0" expanded="false" />
                 <element signature="method#handleCommandsInSetDate#0;class#DairyFarmController#0" expanded="false" />
-                <element signature="method#handleCommandsInGetFeedProperties#0;class#DairyFarmController#0" expanded="false" />
                 <element signature="method#handleCommandsInGetFeedBarbandFeeds#0;class#DairyFarmController#0" expanded="false" />
                 <element signature="method#handleCommandsInMenu#0;class#DairyFarmController#0" expanded="false" />
                 <element signature="method#statusStorage#0;class#DairyFarmController#0" expanded="false" />
-                <element signature="method#statusBarband#0;class#DairyFarmController#0" expanded="false" />
-                <element signature="method#statusTanks#0;class#DairyFarmController#0" expanded="false" />
                 <element signature="method#statusFarm#0;class#DairyFarmController#0" expanded="false" />
                 <element signature="method#statusCow#0;class#DairyFarmController#0" expanded="false" />
                 <element signature="method#addFoodToStorage#0;class#DairyFarmController#0" expanded="false" />
-                <element signature="method#emtyTank#0;class#DairyFarmController#0" expanded="false" />
+                <element signature="method#butcherCow#0;class#DairyFarmController#0" expanded="false" />
+                <element signature="method#emptyTank#0;class#DairyFarmController#0" expanded="false" />
                 <element signature="method#milkCow#0;class#DairyFarmController#0" expanded="false" />
                 <element signature="method#sellMilk#0;class#DairyFarmController#0" expanded="false" />
+                <element signature="method#addCow#0;class#DairyFarmController#0" expanded="false" />
                 <element signature="method#moveCow#0;class#DairyFarmController#0" expanded="false" />
                 <element signature="method#addNewFood#0;class#DairyFarmController#0" expanded="false" />
                 <element signature="method#feedBarband#0;class#DairyFarmController#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Massage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/Massage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tank.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Tank.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+              <folding>
+                <element signature="method#hasCapacity#0;class#Tank#0" expanded="false" />
+                <element signature="method#addMilk#0;class#Tank#0" expanded="false" />
+                <element signature="method#isMilkSpoiled#0;class#Tank#0" expanded="false" />
+                <element signature="method#empty#0;class#Tank#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewRequest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/ViewRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="e#297#298#0" expanded="true" />
+                <element signature="e#331#332#0" expanded="true" />
+                <element signature="e#489#490#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DairyFarm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/DairyFarm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1300">
+              <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+              <folding>
+                <element signature="method#DairyFarm#0;class#DairyFarm#0" expanded="false" />
+                <element signature="method#addNewFoodToStorage#0;class#DairyFarm#0" expanded="false" />
+                <element signature="method#getBarband#0;class#DairyFarm#0" expanded="false" />
+                <element signature="e#1349#1350#0" expanded="true" />
+                <element signature="e#1387#1388#0" expanded="true" />
+                <element signature="method#getTank#0;class#DairyFarm#0" expanded="false" />
+                <element signature="method#getCowInformation#0;class#DairyFarm#0" expanded="false" />
+                <element signature="method#addNewCow#0;class#DairyFarm#0" expanded="false" />
+                <element signature="e#2716#2717#0" expanded="true" />
+                <element signature="method#addBarband#0;class#DairyFarm#0" expanded="false" />
+                <element signature="method#killCow#0;class#DairyFarm#0" expanded="false" />
+                <element signature="method#getMaxCowProduction#0;class#DairyFarm#0" expanded="false" />
+                <element signature="method#getInformation#0;class#DairyFarm#0" expanded="false" />
+                <element signature="method#feedBarband#0;class#DairyFarm#0" expanded="false" />
+                <element signature="method#milkCow#0;class#DairyFarm#0" expanded="false" />
+                <element signature="method#sellMilk#0;class#DairyFarm#0" expanded="false" />
+                <element signature="method#emtptyTank#0;class#DairyFarm#0" expanded="false" />
+                <element signature="method#butcherCow#0;class#DairyFarm#0" expanded="false" />
+                <element signature="method#showRanks#0;class#DairyFarm#0" expanded="false" />
+                <element signature="method#endDay#0;class#DairyFarm#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InputRegexes.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/InputRegexes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/CommandType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -195,19 +275,22 @@
         <option value="$PROJECT_DIR$/src/Controller/WhichPartAreWeIn.java" />
         <option value="$PROJECT_DIR$/src/Controller/ControllerRequest.java" />
         <option value="$PROJECT_DIR$/src/Model/Date.java" />
-        <option value="$PROJECT_DIR$/src/Model/Tank.java" />
         <option value="$PROJECT_DIR$/src/View/ViewRequest.java" />
-        <option value="$PROJECT_DIR$/src/Model/Storage.java" />
         <option value="$PROJECT_DIR$/src/Model/Cow.java" />
         <option value="$PROJECT_DIR$/src/Controller/FarmDairyController.java" />
         <option value="$PROJECT_DIR$/src/View/Massage.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Model/DairyFarm.java" />
         <option value="$PROJECT_DIR$/src/View/CommandType.java" />
         <option value="$PROJECT_DIR$/src/View/InputRegexes.java" />
-        <option value="$PROJECT_DIR$/src/View/DairyFarmView.java" />
-        <option value="$PROJECT_DIR$/src/Controller/DairyFarmController.java" />
+        <option value="$PROJECT_DIR$/src/Model/DairyFarm.java" />
+        <option value="$PROJECT_DIR$/src/Seprator.java" />
+        <option value="$PROJECT_DIR$/src/Separator.java" />
+        <option value="$PROJECT_DIR$/src/Model/Storage.java" />
         <option value="$PROJECT_DIR$/src/Model/Barband.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Separator.java" />
+        <option value="$PROJECT_DIR$/src/View/DairyFarmView.java" />
+        <option value="$PROJECT_DIR$/src/Model/Tank.java" />
+        <option value="$PROJECT_DIR$/src/Controller/DairyFarmController.java" />
       </list>
     </option>
   </component>
@@ -263,6 +346,13 @@
               <item name="CowLeader1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CowLeader1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CowLeader1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Barband.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
             <path>
               <item name="CowLeader1" type="b2602c69:ProjectViewProjectNode" />
@@ -411,16 +501,15 @@
       <workItem from="1521979855098" duration="56000" />
       <workItem from="1521981779193" duration="772000" />
       <workItem from="1522494078907" duration="66685000" />
-      <workItem from="1522752782688" duration="15352000" />
+      <workItem from="1522752782688" duration="21070000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82865000" />
+    <option name="totallyTimeSpent" value="88583000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -430,7 +519,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -460,7 +549,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Controller/DairyFarmController.java</url>
+          <line>196</line>
+          <properties class="Controller.DairyFarmController" method="statusTanks">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -492,37 +591,37 @@
         <state relative-caret-position="255">
           <caret line="105" column="16" lean-forward="false" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
           <folding>
-            <element signature="method#distinguishCommandType#0;class#DairyFarmView#0" expanded="false" />
-            <element signature="e#6229#6230#0" expanded="true" />
-            <element signature="e#6296#6297#0" expanded="true" />
-            <element signature="e#6330#6331#0" expanded="true" />
-            <element signature="e#6382#6383#0" expanded="true" />
-            <element signature="e#6420#6421#0" expanded="true" />
-            <element signature="e#6475#6476#0" expanded="true" />
-            <element signature="e#6516#6517#0" expanded="true" />
-            <element signature="e#6585#6586#0" expanded="true" />
-            <element signature="e#6625#6626#0" expanded="true" />
-            <element signature="e#6693#6694#0" expanded="true" />
-            <element signature="e#6726#6727#0" expanded="true" />
-            <element signature="e#6785#6786#0" expanded="true" />
-            <element signature="e#6820#6821#0" expanded="true" />
-            <element signature="e#6886#6887#0" expanded="true" />
-            <element signature="e#6927#6928#0" expanded="true" />
-            <element signature="e#6986#6987#0" expanded="true" />
-            <element signature="e#7028#7029#0" expanded="true" />
-            <element signature="e#7089#7090#0" expanded="true" />
-            <element signature="e#7127#7128#0" expanded="true" />
-            <element signature="e#7183#7184#0" expanded="true" />
-            <element signature="e#7221#7222#0" expanded="true" />
-            <element signature="e#7277#7278#0" expanded="true" />
-            <element signature="e#7318#7319#0" expanded="true" />
-            <element signature="e#7377#7378#0" expanded="true" />
-            <element signature="e#7414#7415#0" expanded="true" />
-            <element signature="e#7469#7470#0" expanded="true" />
+            <element signature="e#6258#6259#0" expanded="true" />
+            <element signature="e#6325#6326#0" expanded="true" />
+            <element signature="e#6359#6360#0" expanded="true" />
+            <element signature="e#6411#6412#0" expanded="true" />
+            <element signature="e#6449#6450#0" expanded="true" />
+            <element signature="e#6504#6505#0" expanded="true" />
+            <element signature="e#6545#6546#0" expanded="true" />
+            <element signature="e#6614#6615#0" expanded="true" />
+            <element signature="e#6654#6655#0" expanded="true" />
+            <element signature="e#6722#6723#0" expanded="true" />
+            <element signature="e#6755#6756#0" expanded="true" />
+            <element signature="e#6814#6815#0" expanded="true" />
+            <element signature="e#6849#6850#0" expanded="true" />
+            <element signature="e#6915#6916#0" expanded="true" />
+            <element signature="e#6956#6957#0" expanded="true" />
+            <element signature="e#7015#7016#0" expanded="true" />
+            <element signature="e#7057#7058#0" expanded="true" />
+            <element signature="e#7118#7119#0" expanded="true" />
+            <element signature="e#7156#7157#0" expanded="true" />
+            <element signature="e#7212#7213#0" expanded="true" />
+            <element signature="e#7250#7251#0" expanded="true" />
+            <element signature="e#7306#7307#0" expanded="true" />
+            <element signature="e#7347#7348#0" expanded="true" />
+            <element signature="e#7406#7407#0" expanded="true" />
+            <element signature="e#7443#7444#0" expanded="true" />
+            <element signature="e#7498#7499#0" expanded="true" />
             <element signature="method#showNotEnoughSpaceInBarband#0;class#DairyFarmView#0" expanded="false" />
+            <element signature="method#showCowAdded#0;class#DairyFarmView#0" expanded="false" />
             <element signature="method#showFarm#0;class#DairyFarmView#0" expanded="false" />
             <element signature="method#showCow#0;class#DairyFarmView#0" expanded="false" />
-            <element signature="method#showTank#0;class#DairyFarmView#0" expanded="false" />
+            <element signature="method#showStorage#0;class#DairyFarmView#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -535,19 +634,19 @@
             <element signature="method#DairyFarmController#0;class#DairyFarmController#0" expanded="false" />
             <element signature="e#966#967#0" expanded="true" />
             <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="method#handleCommands#0;class#DairyFarmController#0" expanded="false" />
             <element signature="method#handleCommandsInSetDate#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#handleCommandsInGetFeedProperties#0;class#DairyFarmController#0" expanded="false" />
             <element signature="method#handleCommandsInGetFeedBarbandFeeds#0;class#DairyFarmController#0" expanded="false" />
             <element signature="method#handleCommandsInMenu#0;class#DairyFarmController#0" expanded="false" />
             <element signature="method#statusStorage#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#statusBarband#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#statusTanks#0;class#DairyFarmController#0" expanded="false" />
             <element signature="method#statusFarm#0;class#DairyFarmController#0" expanded="false" />
             <element signature="method#statusCow#0;class#DairyFarmController#0" expanded="false" />
             <element signature="method#addFoodToStorage#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#emtyTank#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#butcherCow#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#emptyTank#0;class#DairyFarmController#0" expanded="false" />
             <element signature="method#milkCow#0;class#DairyFarmController#0" expanded="false" />
             <element signature="method#sellMilk#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#addCow#0;class#DairyFarmController#0" expanded="false" />
             <element signature="method#moveCow#0;class#DairyFarmController#0" expanded="false" />
             <element signature="method#addNewFood#0;class#DairyFarmController#0" expanded="false" />
             <element signature="method#feedBarband#0;class#DairyFarmController#0" expanded="false" />
@@ -613,7 +712,7 @@
         <state relative-caret-position="408">
           <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="e#746#747#0" expanded="false" />
             <element signature="e#777#778#0" expanded="false" />
             <element signature="e#1826#1827#0" expanded="false" />
@@ -794,46 +893,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Storage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="79" column="9" lean-forward="true" selection-start-line="69" selection-start-column="8" selection-end-line="79" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#746#747#0" expanded="false" />
-            <element signature="e#777#778#0" expanded="false" />
-            <element signature="e#1826#1827#0" expanded="false" />
-            <element signature="e#1855#1856#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ControllerRequestType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Tank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="48" column="19" lean-forward="false" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
-          <folding>
-            <element signature="method#Tank#0;class#Tank#0" expanded="false" />
-            <element signature="method#hasCapacity#0;class#Tank#0" expanded="false" />
-            <element signature="method#addMilk#0;class#Tank#0" expanded="false" />
-            <element signature="method#isMilkSpoiled#0;class#Tank#0" expanded="false" />
-            <element signature="method#empty#0;class#Tank#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Massage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -858,14 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/CommandType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="28" column="11" lean-forward="false" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -886,6 +941,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Storage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1365">
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Barband.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="81" column="66" lean-forward="false" selection-start-line="81" selection-start-column="66" selection-end-line="81" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#feedBarband#0;class#Barband#0" expanded="false" />
+            <element signature="e#1737#1738#0" expanded="true" />
+            <element signature="e#1788#1789#0" expanded="true" />
+            <element signature="method#Akhoor#0;class#Akhoor#0" expanded="false" />
+            <element signature="method#addFeedToAkhoor#0;class#Akhoor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/ViewRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -898,10 +978,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Massage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Cow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+        <state relative-caret-position="172">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
           <folding>
             <element signature="method#isCowMilkingAbilityLost#0;class#Cow#0" expanded="false" />
             <element signature="method#calculateMaxMilkCapacity#0;class#Cow#0" expanded="false" />
@@ -911,126 +999,146 @@
             <element signature="method#update#0;class#Cow#0" expanded="false" />
             <element signature="method#hasDied#0;class#Cow#0" expanded="false" />
             <element signature="class#CowPhysiology#0" expanded="false" />
-            <element signature="e#3941#3942#0" expanded="true" />
             <element signature="e#3974#3975#0" expanded="true" />
+            <element signature="e#4013#4014#0" expanded="true" />
             <element signature="e#4051#4052#0" expanded="true" />
-            <element signature="method#killCow#0;class#CowInformation#0" expanded="false" />
-            <element signature="method#move#0;class#CowInformation#0" expanded="false" />
             <element signature="method#CowTurn#0;class#CowTurn#0" expanded="false" />
             <element signature="method#compareTo#0;class#CowTurn#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Separator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="63" lean-forward="false" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Tank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding>
+            <element signature="method#hasCapacity#0;class#Tank#0" expanded="false" />
+            <element signature="method#addMilk#0;class#Tank#0" expanded="false" />
+            <element signature="method#isMilkSpoiled#0;class#Tank#0" expanded="false" />
+            <element signature="method#empty#0;class#Tank#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/DairyFarm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state relative-caret-position="1300">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding>
+            <element signature="method#DairyFarm#0;class#DairyFarm#0" expanded="false" />
             <element signature="method#addNewFoodToStorage#0;class#DairyFarm#0" expanded="false" />
-            <element signature="e#1049#1050#0" expanded="true" />
-            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="method#getBarband#0;class#DairyFarm#0" expanded="false" />
+            <element signature="e#1349#1350#0" expanded="true" />
+            <element signature="e#1387#1388#0" expanded="true" />
             <element signature="method#getTank#0;class#DairyFarm#0" expanded="false" />
+            <element signature="method#getCowInformation#0;class#DairyFarm#0" expanded="false" />
+            <element signature="method#addNewCow#0;class#DairyFarm#0" expanded="false" />
+            <element signature="e#2716#2717#0" expanded="true" />
+            <element signature="method#addBarband#0;class#DairyFarm#0" expanded="false" />
             <element signature="method#killCow#0;class#DairyFarm#0" expanded="false" />
             <element signature="method#getMaxCowProduction#0;class#DairyFarm#0" expanded="false" />
             <element signature="method#getInformation#0;class#DairyFarm#0" expanded="false" />
             <element signature="method#feedBarband#0;class#DairyFarm#0" expanded="false" />
             <element signature="method#milkCow#0;class#DairyFarm#0" expanded="false" />
-            <element signature="method#addToStorage#0;class#DairyFarm#0" expanded="false" />
             <element signature="method#sellMilk#0;class#DairyFarm#0" expanded="false" />
             <element signature="method#emtptyTank#0;class#DairyFarm#0" expanded="false" />
-            <element signature="method#moveCow#0;class#DairyFarm#0" expanded="false" />
+            <element signature="method#butcherCow#0;class#DairyFarm#0" expanded="false" />
             <element signature="method#showRanks#0;class#DairyFarm#0" expanded="false" />
             <element signature="method#endDay#0;class#DairyFarm#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Barband.java">
+    <entry file="file://$PROJECT_DIR$/src/Controller/DairyFarmController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="160">
+          <caret line="79" column="25" lean-forward="false" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
           <folding>
-            <element signature="method#feedBarband#0;class#Barband#0" expanded="false" />
-            <element signature="method#Akhoor#0;class#Akhoor#0" expanded="false" />
-            <element signature="method#addFeedToAkhoor#0;class#Akhoor#0" expanded="false" />
+            <element signature="method#DairyFarmController#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="e#966#967#0" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="method#handleCommands#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#handleCommandsInSetDate#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#handleCommandsInGetFeedBarbandFeeds#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#handleCommandsInMenu#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#statusStorage#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#statusFarm#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#statusCow#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#addFoodToStorage#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#butcherCow#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#emptyTank#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#milkCow#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#sellMilk#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#addCow#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#moveCow#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#addNewFood#0;class#DairyFarmController#0" expanded="false" />
+            <element signature="method#feedBarband#0;class#DairyFarmController#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/CommandType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/DairyFarmView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="74" column="55" lean-forward="true" selection-start-line="74" selection-start-column="55" selection-end-line="74" selection-end-column="55" />
           <folding>
-            <element signature="method#distinguishCommandType#0;class#DairyFarmView#0" expanded="false" />
-            <element signature="e#6229#6230#0" expanded="true" />
-            <element signature="e#6296#6297#0" expanded="true" />
-            <element signature="e#6330#6331#0" expanded="true" />
-            <element signature="e#6382#6383#0" expanded="true" />
-            <element signature="e#6420#6421#0" expanded="true" />
-            <element signature="e#6475#6476#0" expanded="true" />
-            <element signature="e#6516#6517#0" expanded="true" />
-            <element signature="e#6585#6586#0" expanded="true" />
-            <element signature="e#6625#6626#0" expanded="true" />
-            <element signature="e#6693#6694#0" expanded="true" />
-            <element signature="e#6726#6727#0" expanded="true" />
-            <element signature="e#6785#6786#0" expanded="true" />
-            <element signature="e#6820#6821#0" expanded="true" />
-            <element signature="e#6886#6887#0" expanded="true" />
-            <element signature="e#6927#6928#0" expanded="true" />
-            <element signature="e#6986#6987#0" expanded="true" />
-            <element signature="e#7028#7029#0" expanded="true" />
-            <element signature="e#7089#7090#0" expanded="true" />
-            <element signature="e#7127#7128#0" expanded="true" />
-            <element signature="e#7183#7184#0" expanded="true" />
-            <element signature="e#7221#7222#0" expanded="true" />
-            <element signature="e#7277#7278#0" expanded="true" />
-            <element signature="e#7318#7319#0" expanded="true" />
-            <element signature="e#7377#7378#0" expanded="true" />
-            <element signature="e#7414#7415#0" expanded="true" />
-            <element signature="e#7469#7470#0" expanded="true" />
+            <element signature="e#6258#6259#0" expanded="true" />
+            <element signature="e#6325#6326#0" expanded="true" />
+            <element signature="e#6359#6360#0" expanded="true" />
+            <element signature="e#6411#6412#0" expanded="true" />
+            <element signature="e#6449#6450#0" expanded="true" />
+            <element signature="e#6504#6505#0" expanded="true" />
+            <element signature="e#6545#6546#0" expanded="true" />
+            <element signature="e#6614#6615#0" expanded="true" />
+            <element signature="e#6654#6655#0" expanded="true" />
+            <element signature="e#6722#6723#0" expanded="true" />
+            <element signature="e#6755#6756#0" expanded="true" />
+            <element signature="e#6814#6815#0" expanded="true" />
+            <element signature="e#6849#6850#0" expanded="true" />
+            <element signature="e#6915#6916#0" expanded="true" />
+            <element signature="e#6956#6957#0" expanded="true" />
+            <element signature="e#7015#7016#0" expanded="true" />
+            <element signature="e#7057#7058#0" expanded="true" />
+            <element signature="e#7118#7119#0" expanded="true" />
+            <element signature="e#7156#7157#0" expanded="true" />
+            <element signature="e#7212#7213#0" expanded="true" />
+            <element signature="e#7250#7251#0" expanded="true" />
+            <element signature="e#7306#7307#0" expanded="true" />
+            <element signature="e#7347#7348#0" expanded="true" />
+            <element signature="e#7406#7407#0" expanded="true" />
+            <element signature="e#7443#7444#0" expanded="true" />
+            <element signature="e#7498#7499#0" expanded="true" />
             <element signature="method#showNotEnoughSpaceInBarband#0;class#DairyFarmView#0" expanded="false" />
+            <element signature="method#showCowAdded#0;class#DairyFarmView#0" expanded="false" />
             <element signature="method#showFarm#0;class#DairyFarmView#0" expanded="false" />
             <element signature="method#showCow#0;class#DairyFarmView#0" expanded="false" />
-            <element signature="method#showTank#0;class#DairyFarmView#0" expanded="false" />
+            <element signature="method#showStorage#0;class#DairyFarmView#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/InputRegexes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="77" lean-forward="false" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
+        <state relative-caret-position="360">
+          <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/DairyFarmController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="237" column="0" lean-forward="false" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
-          <folding>
-            <element signature="method#DairyFarmController#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="e#966#967#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="method#handleCommandsInSetDate#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#handleCommandsInGetFeedProperties#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#handleCommandsInGetFeedBarbandFeeds#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#handleCommandsInMenu#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#statusStorage#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#statusBarband#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#statusTanks#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#statusFarm#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#statusCow#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#addFoodToStorage#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#emtyTank#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#milkCow#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#sellMilk#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#moveCow#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#addNewFood#0;class#DairyFarmController#0" expanded="false" />
-            <element signature="method#feedBarband#0;class#DairyFarmController#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
