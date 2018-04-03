@@ -25,5 +25,6 @@ public enum CommandType {
     END_FEED ,
     FEED_PROPERTIES ,
     END ,
-    INVALID_COMMAND
+    INVALID_COMMAND ,
+    NOTHING
 }

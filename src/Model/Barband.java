@@ -12,7 +12,7 @@ public class Barband {
     }
 
     public Cow getCow(int n) {
-        if (cows.length > n) {
+        if (cows.length < n) {
             return null;
         } else {
             return cows[n - 1];

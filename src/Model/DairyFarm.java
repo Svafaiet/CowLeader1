@@ -76,7 +76,7 @@ public class DairyFarm {
     public Cow getCowByNumber(int n) {
         CowInformation cowNumberNInformation = getCowInformation(n);
         if (cowNumberNInformation.isAlive()) {
-            return barbands.get(cowNumberNInformation.getBarbandNum())
+            return getBarband(cowNumberNInformation.getBarbandNum())
                     .getCow(cowNumberNInformation.getCowNumInBarband());
         } else {
             return null;
@@ -98,6 +98,8 @@ public class DairyFarm {
     public void addTank(int n) {
         tanks.add(new Tank(n));
     }
+
+    public void addBarband(int n) { barbands.add(new Barband(n)); }
 
     private boolean isCowAlive(int n) {
         if (getCowByNumber(n) == null) {

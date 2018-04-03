@@ -1,7 +1,8 @@
 package View;
 
 public class InputRegexes {
-    public static final String SET_DATE = "\\s*^(\\s*[1-9]\\d\\d\\d\\/(0[1-9]|1[0-2])\\/(0[1-9]|30|[1-2][0-9]\\s*))$\\s*";
+    public static final String NOTHING = "\\s*^(\\s*)$\\s*";
+    public static final String SET_DATE = "\\s*^(\\s*[1-9]\\d\\d\\d/(0[1-9]|1[0-2])/(0[1-9]|30|[1-2][0-9]\\s*))$\\s*";
     public static final String ADD_BAEBAND = "\\s*^(\\s*add\\s+barband\\s+\\d+\\s*)$\\s*";
     public static final String STATUS_BARBAND = "\\s*^(\\s*status\\s+barband\\s+\\d+\\s*)$\\s*";
     public static final String STATUS_COW = "\\s*^(\\s*status\\s+cow\\s+\\d+\\s*)$\\s*";

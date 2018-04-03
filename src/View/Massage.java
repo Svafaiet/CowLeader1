@@ -8,7 +8,7 @@ public class Massage {
                     "number of cows: COW_NUM\n" +
                     "capacity: CAPACITY\n" +
                     "the remaining food:\n" +
-                    "REMAINING_FOOD" +
+                    "REMAINING_FEED\n" +
                     "cows:\n" +
                     "COW_NUMBERS";
     public static final String INVALID_BARBAND = "invalid barband";
@@ -22,7 +22,7 @@ public class Massage {
     public static final String INVALID_COW = "invalid cow";
     public static final String
             THERE_IS_NOT_ENOUGH_SPACE = "there is not enough space";
-    public static final String COW_ADD = "cow added. cow num COW_NUM";
+    public static final String COW_ADDED = "cow added. cow num COW_NUM";
     public static final String SHOW_FARM =
             "dairy farm\n" +
                     "number of barbands: BARBAND_NUM\n" +
