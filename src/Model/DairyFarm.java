@@ -30,7 +30,7 @@ public class DairyFarm {
     }
 
     //hasAccessToArray
-    public int getCowCounts() {
+    public int getCowInformationSize() {
         return cowInformation.size();
     }
 
@@ -85,7 +85,7 @@ public class DairyFarm {
 
     //hasAccessToArrays
     public int findNumberForCow() {
-        for (int i = 0; i < getCowCounts(); i++) {
+        for (int i = 0; i < getCowInformationSize(); i++) {
             if (!cowInformation.get(i).isAlive()) {
                 return i + 1;
             }
@@ -98,7 +98,7 @@ public class DairyFarm {
         int cowNum = findNumberForCow();
         Cow newCow;
         if(cowNum == -1) {
-            newCow = new Cow(getCowCounts() + 1);
+            newCow = new Cow(getCowInformationSize() + 1);
         } else {
             newCow = new Cow(cowNum);
         }
@@ -141,7 +141,7 @@ public class DairyFarm {
 
     private int getMaxCowProduction() {
         int ans = 0;
-        for (int i = 1; i <= getCowCounts(); i++) {
+        for (int i = 1; i <= getCowInformationSize(); i++) {
             Cow cow = getCowByNumber(i);
             if (isCowAlive(cow)) {
                 ans += cow.calculateMaxMilkCapacity();
@@ -151,7 +151,13 @@ public class DairyFarm {
     }
 
     public String getInformation() {
-        return "" + getBarbandsCount() + " " + getCowCounts() + " " + storage.getCapacity() + " " + tanks.size() + " "
+        int aliveCowsCount = 0;
+        for (int i = 0; i < getCowInformationSize(); i++) {
+            if (isCowAlive(i + 1)) {
+                aliveCowsCount++;
+            }
+        }
+        return "" + getBarbandsCount() + " " + aliveCowsCount + " " + storage.getCapacity() + " " + tanks.size() + " "
                 + getMaxCowProduction();
     }
 
@@ -266,7 +272,7 @@ public class DairyFarm {
     //hasAccessToArrays
     public void endDay() {
         today.datePlusPlus();
-        for (int i = 1; i <= getCowCounts(); i++) {
+        for (int i = 1; i <= getCowInformationSize(); i++) {
             Cow cow = getCowByNumber(i);
             if (isCowAlive(cow)) {
                 cow.update();
@@ -278,5 +284,6 @@ public class DairyFarm {
         for (Barband barband : barbands) {
             barband.feedCows();
         }
+        System.err.println("Day Ended");
     }
 }
