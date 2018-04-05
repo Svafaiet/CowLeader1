@@ -21,9 +21,9 @@ public class InputRegexes {
     public static final String SHOW_RANKS = "\\s*^(\\s*show\\s+ranks\\s*)$\\s*";
     public static final String INCREASE_STORAGE_CAPACITY = "\\s*^(\\s*increase\\s+storage\\s+capacity\\s+\\d+\\s*)$\\s*";
     public static final String ADD_NEW_FOOD = "\\s*^(\\s*add\\s+new\\s+food\\s+\\S+\\s+\\d+\\s*)$\\s*";
-    public static final String END_DAY = "\\s*^(\\s*day\\s+passed\\s+\\d+\\s*)$\\s*";
+    public static final String END_DAY = "\\s*^(\\s*day\\s+passed\\s*)$\\s*";
     public static final String FEED_TYPE = "\\s*^(\\s*\\S+\\s+\\d+\\s*)$\\s*";
-    public static final String END_FEED = "\\s*^(\\s*end\\_feed\\s+\\d+\\s*)$\\s*";
+    public static final String END_FEED = "\\s*^(\\s*end_feed\\s*)$\\s*";
     public static final String FEED_PROPERTIES = "\\s*^(\\s*\\d+\\s*)$\\s*";
     public static final String END = "\\s*^(\\s*end\\s*)$\\s*";
 }

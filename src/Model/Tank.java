@@ -32,13 +32,16 @@ public class Tank {
 
     public void reduceMilk(int amount) {
         stock -= amount;
+        if (stock == 0) {
+            expirationDate = null;
+        }
     }
 
     public boolean isMilkSpoiled(Date today) {
         if (expirationDate == null) {
             return false;
         }
-        return today.daysBetween(expirationDate) > MILK_DURANCE;
+        return today.isAfter(expirationDate);
     }
 
     public void empty() {

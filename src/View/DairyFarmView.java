@@ -256,15 +256,16 @@ public class DairyFarmView {
         int feedCount = Integer.parseInt(information[3]);
         String output;
         output = Massage.SHOW_BARBAND.replaceAll("BARBAND_NUM", information[0]);
-        output = output.replaceAll("COW_NUM", information[1]);
+        output = output.replaceFirst("COW_NUM", information[1]);
         output = output.replaceAll("CAPACITY", information[2]);
         for (int i = 0; i < feedCount; i++) {
             output = output.replaceAll("REMAINING_FEED", information[4 + i] + "\nREMAINING_FEED");
         }
-        output = output.replaceAll("REMAINING_FEED", "").replaceAll(Separator.SEPARATOR, " ");  //fixme maybe
+        output = output.replaceAll("\nREMAINING_FEED", "").replaceAll(Separator.SEPARATOR, " ");  //fixme maybe
         for (int i = 0; i < cowCount; i++) {
             output = output.replaceAll("COW_NUMBERS", information[4 + feedCount + i] + "\nCOW_NUMBERS");
         }
-        output = output.replaceAll("COW_NUMBERS", ""); //fixme maybe
+        output = output.replaceAll("\nCOW_NUMBERS", ""); //fixme maybe
+        System.out.println(output);
     }
 }

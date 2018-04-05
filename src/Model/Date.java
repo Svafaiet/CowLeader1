@@ -15,10 +15,22 @@ public class Date {
         return new Date(year, month, day);
     }
 
-    public int daysBetween(Date anotherDate) {
-        return Math.abs((this.year - anotherDate.year) * 360 +
-                (this.month - anotherDate.month) * 30 +
-                (this.day - anotherDate.day));
+    public boolean isAfter(Date date) {
+        if (year > date.year) {
+            return true;
+        } else if (year < date.year) {
+            return false;
+        }
+        if (month > date.month) {
+            return true;
+        } else if (month < date.month) {
+            return false;
+        }
+        if (day > date.day) {
+            return true;
+        }
+        return false;
+
     }
 
     public Date addDaytoDate(int dayCount) {

@@ -61,9 +61,8 @@ public class Barband {
         }
     }
 
-    public void feedBarband(Feed feed, int count) {
+    public void addFeedToAkhoor(Feed feed, int count) {
         akhoor.addFeedToAkhoor(feed, count);
-        feedCows();
     }
 
     public void removeCow(int cowNumberInBarband) {
@@ -88,7 +87,7 @@ public class Barband {
     public String getInformation() {
         ArrayList<Integer> cowNumbers = new ArrayList<>();
         for (Cow cow : this.cows) {
-            if(cow != null) {
+            if (cow != null) {
                 cowNumbers.add(cow.getNum());
             }
         }
@@ -98,7 +97,7 @@ public class Barband {
             numbers += " " + num;
         }
 
-        return  "" + cowNumbers.size() + " " + cows.length + " " + getFeedsInformation() + numbers;
+        return "" + cowNumbers.size() + " " + cows.length + " " + getFeedsInformation() + numbers;
     }
 }
 
@@ -133,7 +132,7 @@ class Akhoor {
     }
 
     public Feed eatFromAkhoor() {
-        if (hasStock()) {
+        if (!hasStock()) {
             return null;
         } else {
             ArrayList<Feed> feeds = new ArrayList<>(feedsCount.keySet());

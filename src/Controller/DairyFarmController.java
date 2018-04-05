@@ -11,6 +11,9 @@ import View.CommandType;
 import View.DairyFarmView;
 import View.ViewRequest;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class DairyFarmController {
     private DairyFarm dairyFarmModel;
     private DairyFarmView dairyFarmView;
@@ -19,6 +22,7 @@ public class DairyFarmController {
 
     private int feedPropertiesCount;
     private int saveBarbandNum;
+    private Map<String, Integer> feedsMovingToAkhoor;
     private String saveFoodName;
     private int saveFoodCount;
     private int[] saveFeedProperties;
@@ -100,15 +104,16 @@ public class DairyFarmController {
             case END:
                 break;
             case END_FEED:
-                saveBarbandNum = -1;
+                dairyFarmModel.feedBarband(saveBarbandNum, feedsMovingToAkhoor);
                 whichPartAreWeIn = WhichPartAreWeIn.MENU;
+                saveBarbandNum = -1;
                 break;
             case FEED_TYPES:
-                dairyFarmModel.feedBarband(saveBarbandNum, viewRequest.getRequestWord(1),
+                feedsMovingToAkhoor.put(viewRequest.getRequestWord(1),
                         Integer.parseInt(viewRequest.getRequestWord(2)));
+
                 break;
             default:
-                dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_COMMAND));
                 break;
         }
 
@@ -243,7 +248,7 @@ public class DairyFarmController {
     }
 
     private void emptyTank() {
-        if (!dairyFarmModel.emtptyTank(Integer.parseInt(viewRequest.getRequestWord(3)))) {
+        if (!dairyFarmModel.emptyTank(Integer.parseInt(viewRequest.getRequestWord(3)))) {
             dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_TANK));
         }
     }
@@ -337,7 +342,8 @@ public class DairyFarmController {
     private void feedBarband() {
         if (dairyFarmModel.isBarbandValid(Integer.parseInt(viewRequest.getRequestWord(3)))) {
             saveBarbandNum = Integer.parseInt(viewRequest.getRequestWord(3));
-            whichPartAreWeIn = WhichPartAreWeIn.GET_FEED_PROPERTIES;
+            feedsMovingToAkhoor = new HashMap<>();
+            whichPartAreWeIn = WhichPartAreWeIn.GET_FEED_BARBAND_FEEDS;
         } else {
             dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.INVALID_BARBAND));
         }

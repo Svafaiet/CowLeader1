@@ -8,6 +8,7 @@ public class Cow {
     private int milk;
     private int savedMilk;
     private int weight;
+    private int savedWeight;
     private int totalMilkProduced;
 
     public Cow(int num) {
@@ -18,6 +19,7 @@ public class Cow {
         milk = 0;
         savedMilk = 0;
         weight = CowPhysiology.COW_WIGHT;
+        savedWeight = 0;
         totalMilkProduced = 0;
     }
 
@@ -65,8 +67,8 @@ public class Cow {
             return;
         }
         savedMilk += feed.getMilkIncrease();
-        weight += feed.getWeightIncrease();
-
+        savedWeight += feed.getWeightIncrease();
+        hunger -= 1;
     }
 
     public void milkCow() {
@@ -83,6 +85,8 @@ public class Cow {
         milk += savedMilk;
         savedMilk = 0;
         milk = Math.min(milk, calculateMaxMilkCapacity());
+        weight += savedWeight;
+        savedWeight = 0;
         //maybe order change
         weight -= hunger;
         hunger += calculateCowDailyFoodNeed();

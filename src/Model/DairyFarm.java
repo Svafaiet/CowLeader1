@@ -84,10 +84,31 @@ public class DairyFarm {
     }
 
     //hasAccessToArrays
+    public int findNumberForCow() {
+        for (int i = 0; i < getCowCounts(); i++) {
+            if (!cowInformation.get(i).isAlive()) {
+                return i + 1;
+            }
+        }
+        return -1;
+    }
+
+    //hasAccessToArrays
     public boolean addNewCow(int n) {
-        int cowNumInBarband = getBarband(n).addCow(new Cow(getCowCounts() + 1));
+        int cowNum = findNumberForCow();
+        Cow newCow;
+        if(cowNum == -1) {
+            newCow = new Cow(getCowCounts() + 1);
+        } else {
+            newCow = new Cow(cowNum);
+        }
+        int cowNumInBarband = getBarband(n).addCow(newCow);
         if (cowNumInBarband != -1) {
-            cowInformation.add(new CowInformation(n, cowNumInBarband));
+            if(cowNum == -1) {
+                cowInformation.add(new CowInformation(n, cowNumInBarband));
+            } else {
+                cowInformation.set(cowNum-1, new CowInformation(n, cowNumInBarband));
+            }
             return true;
         } else {
             return false;
@@ -140,13 +161,16 @@ public class DairyFarm {
         return (getBarbandsCount() >= barbandNum);
     }
 
-    public void feedBarband(int barbandNum, String feedName, int feedCount) {
-        Feed feed = Feeds.findFeedByName(feedName);
-        if (feed != null) {
-            if (storage.getFromStorage(feed, feedCount)) {
-                getBarband(barbandNum).feedBarband(feed, feedCount);
+    public void feedBarband(int barbandNum, Map<String, Integer> feeds) {
+        for (String feedName : feeds.keySet()) {
+            Feed feed = Feeds.findFeedByName(feedName);
+            if (feed != null) {
+                if (storage.getFromStorage(feed, feeds.get(feedName))) {
+                    getBarband(barbandNum).addFeedToAkhoor(feed, feeds.get(feedName));
+                }
             }
         }
+        getBarband(barbandNum).feedCows();
 
     }
 
@@ -192,7 +216,7 @@ public class DairyFarm {
         }
     }
 
-    public boolean emtptyTank(int tankNumber) {
+    public boolean emptyTank(int tankNumber) {
         Tank tank = getTank(tankNumber);
         if (tank == null) {
             return false;
@@ -211,17 +235,22 @@ public class DairyFarm {
     }
 
     public MoveCowReturnValue moveCow(int cowNum, int barbandNum) {
-        //fixme moving cow to its barband not supported
+        //fixme moving cow to its barband is supported
         if (!isCowAlive(cowNum)) {
             return MoveCowReturnValue.INVALID_COW;
         }
         if (barbandNum > getBarbandsCount()) {
             return MoveCowReturnValue.INVALID_BARBAND;
         }
+        if(getCowInformation(cowNum).getBarbandNum() == barbandNum) {
+            return MoveCowReturnValue.COW_MOVED_SUCCESSULLY;
+        }
         int cowNumInBarband = getBarband(barbandNum).addCow(getCowByNumber(cowNum));
         if (cowNumInBarband == -1) {
             return MoveCowReturnValue.NOT_ENOUGH_SPACE;
         } else {
+            getBarband(getCowInformation(cowNum).getBarbandNum())
+                    .removeCow(getCowInformation(cowNum).getCowNumInBarband());
             getCowInformation(cowNum).move(barbandNum, cowNumInBarband);
             return MoveCowReturnValue.COW_MOVED_SUCCESSULLY;
         }
@@ -237,7 +266,7 @@ public class DairyFarm {
     //hasAccessToArrays
     public void endDay() {
         today.datePlusPlus();
-        for (int i = 0; i < getCowCounts(); i++) {
+        for (int i = 1; i <= getCowCounts(); i++) {
             Cow cow = getCowByNumber(i);
             if (isCowAlive(cow)) {
                 cow.update();
