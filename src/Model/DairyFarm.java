@@ -141,7 +141,7 @@ public class DairyFarm {
 
     private int getMaxCowProduction() {
         int ans = 0;
-        for (int i = 0; i < getCowCounts(); i++) {
+        for (int i = 1; i <= getCowCounts(); i++) {
             Cow cow = getCowByNumber(i);
             if (isCowAlive(cow)) {
                 ans += cow.calculateMaxMilkCapacity();
@@ -274,9 +274,9 @@ public class DairyFarm {
                     butcherCow(i);
                 }
             }
-            for (Barband barband : barbands) {
-                barband.feedCows();
-            }
+        }
+        for (Barband barband : barbands) {
+            barband.feedCows();
         }
     }
 }

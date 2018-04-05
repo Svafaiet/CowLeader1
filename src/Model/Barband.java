@@ -37,7 +37,9 @@ public class Barband {
             if (cows[i] == null) {
                 continue;
             }
-            cowTurns.add(new CowTurn(i, cows));
+            if(cows[i].getAge() >= CowPhysiology.INITIAL_DAY_FOR_MILKING) {
+                cowTurns.add(new CowTurn(i, cows));
+            }
         }
         if (cowTurns.size() == 0) {
             return;
@@ -54,7 +56,7 @@ public class Barband {
                 }
                 Feed feed = akhoor.eatFromAkhoor();
                 cows[cowTurn.getIndex()].feedCow(feed);
-            }
+                            }
             if (cows[cowTurns.get(0).getIndex()].getHunger() == 0) {
                 break;
             }

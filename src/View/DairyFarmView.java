@@ -250,7 +250,7 @@ public class DairyFarmView {
         for (int i = 0; i < feedCount; i++) {
             output = output.replaceAll("FEEDS", information[2 + i] + "\nFEEDS" );
         }
-        output = output.replaceAll("FEEDS", "").replaceAll(Separator.SEPARATOR, " "); //fixme maybe
+        output = output.replaceAll("\nFEEDS", "").replaceAll(Separator.SEPARATOR, " "); //fixme maybe
         System.out.println(output);
     }
 
