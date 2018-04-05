@@ -52,4 +52,5 @@ public class Massage {
     public static final String MOVE_COW = "cow moved successfully";
     public static final String THERE_IS_NOT_ENOUGH_SPACE_IN_BARBAND =
             "there is not enough space in barband BARBAND_NUM";
+    public static final String SET_DATE = "set date";
 }

@@ -83,6 +83,9 @@ public class DairyFarmView {
 
     public void showControllerRequest(ControllerRequest controllerRequest) {
         switch (controllerRequest.getControllerRequestType()) {
+            case START:
+                System.out.println(Massage.SET_DATE);
+                break;
             case INVALID_BARBAND:
                 showInvalidBarband();
                 break;

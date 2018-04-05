@@ -94,7 +94,7 @@ public class DairyFarm {
     }
 
     //hasAccessToArrays
-    public boolean addNewCow(int n) {
+    public int addNewCow(int n) {
         int cowNum = findNumberForCow();
         Cow newCow;
         if(cowNum == -1) {
@@ -109,9 +109,9 @@ public class DairyFarm {
             } else {
                 cowInformation.set(cowNum-1, new CowInformation(n, cowNumInBarband));
             }
-            return true;
+            return newCow.getNum();
         } else {
-            return false;
+            return -1;
         }
     }
 

@@ -38,6 +38,10 @@ public class DairyFarmController {
         return viewRequest.getCommandType() == CommandType.END;
     }
 
+    public void start() {
+        dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.START));
+    }
+
     public void takeCommand() {
         viewRequest = dairyFarmView.getRequest();
     }
@@ -294,10 +298,11 @@ public class DairyFarmController {
     }
 
     private void addCow() {
-        if (dairyFarmModel.addNewCow(Integer.parseInt(viewRequest.getRequestWord(3)))) {
-            String[] cowNum = new String[1];
-            cowNum[0] = String.valueOf(dairyFarmModel.getCowCounts());
-            dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.COW_ADDED, cowNum));
+        int cowNum = dairyFarmModel.addNewCow(Integer.parseInt(viewRequest.getRequestWord(3)));
+        if (cowNum != -1) {
+            String[] cowNumInString = new String[1];
+            cowNumInString[0] = String.valueOf(cowNum);
+            dairyFarmView.showControllerRequest(new ControllerRequest(ControllerRequestType.COW_ADDED, cowNumInString));
         } else {
             String[] barbandNum = new String[1];
             barbandNum[0] = viewRequest.getRequestWord(3);
